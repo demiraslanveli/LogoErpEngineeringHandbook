@@ -53,6 +53,13 @@ Bu repository iki amaca hizmet eder:
 33. [Logo Objects ile Fiş ve Fatura Örneği](33_Logo_Objects_Fis_ve_Fatura_Ornegi.md)
 34. [ProductionApplication Gerçek Kullanım Kalıpları](34_ProductionApplication_Gercek_Kullanim_Kaliplari.md)
 35. [SQL Server Performans Teşhis Rehberi](35_SQL_Performans_Teshis_Rehberi.md)
+36. [CLFLINE ve Cari Hareket Mantığı](36_CLFLINE_ve_Cari_Hareket_Mantigi.md)
+37. [Muhasebe Fişi ve EMFICHE / EMFLINE İlişkileri](37_Muhasebe_Fisi_ve_EMFICHE_EMFLINE_Iliskileri.md)
+38. [ORDTRANSREF, PREVLINEREF ve SOURCELINK](38_ORDTRANSREF_PREVLINEREF_SOURCELINK.md)
+39. [STFICHE / STLINE Alan Sözlüğü](39_STFICHE_STLINE_Alan_Sozlugu.md)
+40. [INVOICE Alan Sözlüğü](40_INVOICE_Alan_Sozlugu.md)
+41. [Seri / Lot Gerçek SQL Sorguları](41_Seri_Lot_Gercek_SQL_Sorgulari.md)
+42. [Üretim Maliyet Analizleri](42_Uretim_Maliyet_Analizleri.md)
 
 ## Kapsam
 
@@ -67,6 +74,9 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - Logo tablo/veri sözlüğü
 - TRCODE, LINETYPE ve IOCODE referans tabloları
 - Birim dönüşümü ve UINFO kullanım örnekleri
+- Cari hareket, muhasebe fişi ve belge bağlantı haritaları
+- STFICHE, STLINE ve INVOICE alan sözlükleri
+- Üretim maliyet ve maliyet sapma analizleri
 - SQL performans vaka analizleri
 - MES / LIMS / WMS entegrasyon örnekleri
 - Gerçek hata mesajları ve çözüm notları
