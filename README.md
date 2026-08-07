@@ -60,6 +60,13 @@ Bu repository iki amaca hizmet eder:
 40. [INVOICE Alan Sözlüğü](40_INVOICE_Alan_Sozlugu.md)
 41. [Seri / Lot Gerçek SQL Sorguları](41_Seri_Lot_Gercek_SQL_Sorgulari.md)
 42. [Üretim Maliyet Analizleri](42_Uretim_Maliyet_Analizleri.md)
+43. [CLCARD Alan Sözlüğü](43_CLCARD_Alan_Sozlugu.md)
+44. [ITEMS Alan Sözlüğü](44_ITEMS_Alan_Sozlugu.md)
+45. [ORFICHE / ORFLINE Alan Sözlüğü](45_ORFICHE_ORFLINE_Alan_Sozlugu.md)
+46. [UNITSETL / ITMUNITA / UNITBARCODE](46_UNITSETL_ITMUNITA_UNITBARCODE.md)
+47. [PRODORD Alan Sözlüğü](47_PRODORD_Alan_Sozlugu.md)
+48. [Stok Envanter SQL Kalıpları](48_Stok_Envanter_SQL_Kaliplari.md)
+49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_KatalogU.md)
 
 ## Kapsam
 
@@ -75,8 +82,9 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - TRCODE, LINETYPE ve IOCODE referans tabloları
 - Birim dönüşümü ve UINFO kullanım örnekleri
 - Cari hareket, muhasebe fişi ve belge bağlantı haritaları
-- STFICHE, STLINE ve INVOICE alan sözlükleri
+- STFICHE, STLINE, INVOICE, CLCARD, ITEMS, ORFICHE, ORFLINE ve PRODORD alan sözlükleri
 - Üretim maliyet ve maliyet sapma analizleri
+- Stok envanter ve yaşlandırma sorguları
 - SQL performans vaka analizleri
 - MES / LIMS / WMS entegrasyon örnekleri
 - Gerçek hata mesajları ve çözüm notları
