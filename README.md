@@ -37,13 +37,21 @@ Bu repository iki amaca hizmet eder:
 17. [Gerçek Proje ve Vaka Analizleri](17_Gercek_Vaka_Analizleri.md)
 18. [Best Practices](18_Best_Practices.md)
 19. [LLM Knowledge Base Standardı](19_LLM_Knowledge_Base.md)
+20. [DataObjectType Referansı](20_DataObjectType_Referansi.md)
+21. [TRCODE Referansı](21_TRCODE_Referansi.md)
+22. [Logo Tablo Sözlüğü](22_Logo_Tablo_Sozlugu.md)
+23. [IData Gerçek Kullanım Örnekleri](23_IData_Gercek_Kullanim_Ornekleri.md)
+24. [IQuery Gerçek Sorgu Kalıpları](24_IQuery_Gercek_Sorgu_Kaliplari.md)
+25. [Sipariş, İrsaliye ve Fatura İlişki Haritası](25_Siparis_Irsaliye_Fatura_Iliski_Haritasi.md)
+26. [Hata Yönetimi ve Loglama](26_Hata_Yonetimi_ve_Loglama.md)
+27. [Test, Rollback ve Idempotency](27_Test_Rollback_ve_Idempotency.md)
 
 ## Kapsam
 
 Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirilecektir:
 
-- Logo Objects `DataObjectType` referansları
-- Kart ve fiş bazında çalışan kod örnekleri
+- `DataObjectType` gerçek enum sözlüğü ve doğrulanmış örnekler
+- Kart ve fiş bazında çalışan Logo Objects kod örnekleri
 - `IData` field sözlüğü
 - `ProductionApplication` gerçek kullanım örnekleri
 - Üretim emri, iş emri ve operasyon ilişkileri
@@ -54,6 +62,7 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - MES / LIMS / WMS entegrasyon örnekleri
 - Gerçek hata mesajları ve çözüm notları
 - Sürüm bazlı davranış farkları
+- Test, rollback, retry ve idempotent entegrasyon tasarımları
 
 ## Bilgi Güven Seviyeleri
 
