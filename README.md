@@ -66,7 +66,7 @@ Bu repository iki amaca hizmet eder:
 46. [UNITSETL / ITMUNITA / UNITBARCODE](46_UNITSETL_ITMUNITA_UNITBARCODE.md)
 47. [PRODORD Alan Sözlüğü](47_PRODORD_Alan_Sozlugu.md)
 48. [Stok Envanter SQL Kalıpları](48_Stok_Envanter_SQL_Kaliplari.md)
-49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_KATALOGU.md)
+49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_Katalogu.md)
 50. [PRCLIST Fiyat Kartları ve Fiyat Mantığı](50_PRCLIST_Fiyat_Kartlari_ve_Fiyat_Mantigi.md)
 51. [PAYPLANS Ödeme Planı Mantığı](51_PAYPLANS_Odeme_Plani_Mantigi.md)
 52. [L_CAPIFIRM / L_CAPIPERIOD Firma ve Dönem Yapısı](52_L_CAPIFIRM_L_CAPIPERIOD_Firma_Donem_Yapisi.md)
