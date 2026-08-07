@@ -66,7 +66,14 @@ Bu repository iki amaca hizmet eder:
 46. [UNITSETL / ITMUNITA / UNITBARCODE](46_UNITSETL_ITMUNITA_UNITBARCODE.md)
 47. [PRODORD Alan Sözlüğü](47_PRODORD_Alan_Sozlugu.md)
 48. [Stok Envanter SQL Kalıpları](48_Stok_Envanter_SQL_Kaliplari.md)
-49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_Katalogu.md)
+49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_KATALOGU.md)
+50. [PRCLIST Fiyat Kartları ve Fiyat Mantığı](50_PRCLIST_Fiyat_Kartlari_ve_Fiyat_Mantigi.md)
+51. [PAYPLANS Ödeme Planı Mantığı](51_PAYPLANS_Odeme_Plani_Mantigi.md)
+52. [L_CAPIFIRM / L_CAPIPERIOD Firma ve Dönem Yapısı](52_L_CAPIFIRM_L_CAPIPERIOD_Firma_Donem_Yapisi.md)
+53. [İşyeri, Fabrika ve Ambar Organizasyon Yapısı](53_Isyeri_Fabrika_Ambar_Organizasyon_Yapisi.md)
+54. [PROJECT Proje Kartları ve PROJECTREF](54_PROJECT_Proje_Kartlari_ve_ProjectRef.md)
+55. [Üretim Emri, İş Emri ve Operasyon İlişkileri](55_Uretim_Emri_Is_Emri_Operasyon_Iliskileri.md)
+56. [Logo Objects Tam CRUD Örnekleri](56_Logo_Objects_Tam_CRUD_Ornekleri.md)
 
 ## Kapsam
 
@@ -74,7 +81,7 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 
 - `DataObjectType` gerçek enum sözlüğü ve doğrulanmış örnekler
 - Kart ve fiş bazında çalışan Logo Objects kod örnekleri
-- `IData` field sözlüğü
+- `IData` field sözlüğü ve tam CRUD kalıpları
 - `ProductionApplication` gerçek kullanım örnekleri
 - Üretim emri, iş emri ve operasyon ilişkileri
 - Seri/lot tablo ve nesne ilişkileri
@@ -83,6 +90,9 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - Birim dönüşümü ve UINFO kullanım örnekleri
 - Cari hareket, muhasebe fişi ve belge bağlantı haritaları
 - STFICHE, STLINE, INVOICE, CLCARD, ITEMS, ORFICHE, ORFLINE ve PRODORD alan sözlükleri
+- PRCLIST fiyat ve PAYPLANS ödeme planı mantığı
+- Firma/dönem ve işyeri/fabrika/ambar organizasyon yapısı
+- PROJECT / PROJECTREF kullanımı
 - Üretim maliyet ve maliyet sapma analizleri
 - Stok envanter ve yaşlandırma sorguları
 - SQL performans vaka analizleri
