@@ -66,7 +66,7 @@ Bu repository iki amaca hizmet eder:
 46. [UNITSETL / ITMUNITA / UNITBARCODE](46_UNITSETL_ITMUNITA_UNITBARCODE.md)
 47. [PRODORD Alan Sözlüğü](47_PRODORD_Alan_Sozlugu.md)
 48. [Stok Envanter SQL Kalıpları](48_Stok_Envanter_SQL_Kaliplari.md)
-49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_KatalogU.md)
+49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_Katalogu.md)
 
 ## Kapsam
 
