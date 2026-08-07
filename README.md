@@ -45,6 +45,14 @@ Bu repository iki amaca hizmet eder:
 25. [Sipariş, İrsaliye ve Fatura İlişki Haritası](25_Siparis_Irsaliye_Fatura_Iliski_Haritasi.md)
 26. [Hata Yönetimi ve Loglama](26_Hata_Yonetimi_ve_Loglama.md)
 27. [Test, Rollback ve Idempotency](27_Test_Rollback_ve_Idempotency.md)
+28. [LINETYPE Referansı](28_LINETYPE_Referansi.md)
+29. [IOCODE ve Ambar Yönü](29_IOCODE_ve_Ambar_Yonu.md)
+30. [Birim Dönüşümleri ve UINFO](30_Birim_Donusumleri_ve_UINFO.md)
+31. [Seri / Lot Tablo İlişkileri](31_Seri_Lot_Tablo_Iliskileri.md)
+32. [Logo Objects ile Malzeme Kartı Örneği](32_Logo_Objects_Malzeme_Karti_Ornegi.md)
+33. [Logo Objects ile Fiş ve Fatura Örneği](33_Logo_Objects_Fis_ve_Fatura_Ornegi.md)
+34. [ProductionApplication Gerçek Kullanım Kalıpları](34_ProductionApplication_Gercek_Kullanim_Kaliplari.md)
+35. [SQL Server Performans Teşhis Rehberi](35_SQL_Performans_Teshis_Rehberi.md)
 
 ## Kapsam
 
@@ -57,7 +65,8 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - Üretim emri, iş emri ve operasyon ilişkileri
 - Seri/lot tablo ve nesne ilişkileri
 - Logo tablo/veri sözlüğü
-- TRCODE ve LINETYPE referans tabloları
+- TRCODE, LINETYPE ve IOCODE referans tabloları
+- Birim dönüşümü ve UINFO kullanım örnekleri
 - SQL performans vaka analizleri
 - MES / LIMS / WMS entegrasyon örnekleri
 - Gerçek hata mesajları ve çözüm notları
