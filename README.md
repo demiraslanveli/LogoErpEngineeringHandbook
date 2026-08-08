@@ -66,7 +66,7 @@ Bu repository iki amaca hizmet eder:
 46. [UNITSETL / ITMUNITA / UNITBARCODE](46_UNITSETL_ITMUNITA_UNITBARCODE.md)
 47. [PRODORD Alan Sözlüğü](47_PRODORD_Alan_Sozlugu.md)
 48. [Stok Envanter SQL Kalıpları](48_Stok_Envanter_SQL_Kaliplari.md)
-49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_Katalogu.md)
+49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_KATALOGu.md)
 50. [PRCLIST Fiyat Kartları ve Fiyat Mantığı](50_PRCLIST_Fiyat_Kartlari_ve_Fiyat_Mantigi.md)
 51. [PAYPLANS Ödeme Planı Mantığı](51_PAYPLANS_Odeme_Plani_Mantigi.md)
 52. [L_CAPIFIRM / L_CAPIPERIOD Firma ve Dönem Yapısı](52_L_CAPIFIRM_L_CAPIPERIOD_Firma_Donem_Yapisi.md)
@@ -74,6 +74,14 @@ Bu repository iki amaca hizmet eder:
 54. [PROJECT Proje Kartları ve PROJECTREF](54_PROJECT_Proje_Kartlari_ve_ProjectRef.md)
 55. [Üretim Emri, İş Emri ve Operasyon İlişkileri](55_Uretim_Emri_Is_Emri_Operasyon_Iliskileri.md)
 56. [Logo Objects Tam CRUD Örnekleri](56_Logo_Objects_Tam_CRUD_Ornekleri.md)
+57. [XML Import / Export ve Veri Aktarımı](57_XML_Import_Export_ve_Veri_Aktarimi.md)
+58. [Logo Objects Hata Kodları ve Hata Ayıklama](58_Logo_Objects_Hata_Kodlari_ve_Hata_Ayiklama.md)
+59. [Dispatch / Invoice Transaction İlişkileri](59_Dispatch_Invoice_Transaction_Iliskileri.md)
+60. [Döviz Alanları ve Kur Mantığı](60_Doviz_Alanlari_ve_Kur_Mantigi.md)
+61. [KDV, İstisna ve Muafiyet Alanları](61_KDV_Istisna_ve_Muafiyet_Alanlari.md)
+62. [Cari Yaşlandırma ve FIFO Kapama Mantığı](62_Cari_Yaslandirma_ve_FIFO_Kapama_Mantigi.md)
+63. [Maliyet Alanları ve Maliyetlendirme Verisi](63_Maliyet_Alanlari_ve_Maliyetlendirme_Verisi.md)
+64. [ProductionApplication Operasyon Kod Örnekleri](64_ProductionApplication_Operasyon_Kod_Ornekleri.md)
 
 ## Kapsam
 
@@ -82,7 +90,8 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - `DataObjectType` gerçek enum sözlüğü ve doğrulanmış örnekler
 - Kart ve fiş bazında çalışan Logo Objects kod örnekleri
 - `IData` field sözlüğü ve tam CRUD kalıpları
-- `ProductionApplication` gerçek kullanım örnekleri
+- XML import/export ve dış sistem veri eşleştirme kalıpları
+- `ProductionApplication` gerçek kullanım ve operasyon örnekleri
 - Üretim emri, iş emri ve operasyon ilişkileri
 - Seri/lot tablo ve nesne ilişkileri
 - Logo tablo/veri sözlüğü
@@ -93,6 +102,8 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - PRCLIST fiyat ve PAYPLANS ödeme planı mantığı
 - Firma/dönem ve işyeri/fabrika/ambar organizasyon yapısı
 - PROJECT / PROJECTREF kullanımı
+- Döviz, KDV istisna/muafiyet ve finansal alanlar
+- Cari yaşlandırma ve FIFO kapama mantığı
 - Üretim maliyet ve maliyet sapma analizleri
 - Stok envanter ve yaşlandırma sorguları
 - SQL performans vaka analizleri
