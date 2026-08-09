@@ -82,6 +82,13 @@ Bu repository iki amaca hizmet eder:
 62. [Cari Yaşlandırma ve FIFO Kapama Mantığı](62_Cari_Yaslandirma_ve_FIFO_Kapama_Mantigi.md)
 63. [Maliyet Alanları ve Maliyetlendirme Verisi](63_Maliyet_Alanlari_ve_Maliyetlendirme_Verisi.md)
 64. [ProductionApplication Operasyon Kod Örnekleri](64_ProductionApplication_Operasyon_Kod_Ornekleri.md)
+65. [Logo Objects REST Service Mimarisi](65_Logo_Objects_REST_Service_Mimarisi.md)
+66. [COM Yaşam Döngüsü ve Kaynak Yönetimi](66_COM_Yasam_Dongusu_ve_Kaynak_Yonetimi.md)
+67. [Çoklu Firma / Dönem Servis Mimarisi](67_Coklu_Firma_Donem_Servis_Mimarisi.md)
+68. [Thread, Concurrency ve Session İzolasyonu](68_Thread_Concurrency_ve_Session_Izolasyonu.md)
+69. [Batch İşlemler, Retry ve Backoff](69_Batch_Islemler_Retry_ve_Backoff.md)
+70. [Entegrasyon Log, Queue ve Reconciliation Modeli](70_Entegrasyon_Log_Queue_ve_Reconciliation_Modeli.md)
+71. [MES → Logo Uçtan Uca Referans Mimari](71_MES_Logo_Uctan_Uca_Referans_Mimari.md)
 
 ## Kapsam
 
@@ -107,6 +114,11 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - Üretim maliyet ve maliyet sapma analizleri
 - Stok envanter ve yaşlandırma sorguları
 - SQL performans vaka analizleri
+- Logo Objects REST servisleri ve COM yaşam döngüsü
+- Çoklu firma/dönem servis mimarileri
+- Thread/concurrency ve session izolasyonu
+- Batch, retry, backoff ve dead-letter yaklaşımları
+- Entegrasyon log, queue ve reconciliation modelleri
 - MES / LIMS / WMS entegrasyon örnekleri
 - Gerçek hata mesajları ve çözüm notları
 - Sürüm bazlı davranış farkları
