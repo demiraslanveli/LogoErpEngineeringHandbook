@@ -102,6 +102,14 @@ Bu repository iki amaca hizmet eder:
 82. [TempDB, PAGELATCH ve I/O Teşhisi](82_TempDB_PAGELATCH_ve_IO_Teshisi.md)
 83. [SQL Server Error 701 ve Bellek Baskısı](83_SQL_Server_Error_701_ve_Bellek_Baskisi.md)
 84. [Büyük Logo Veritabanlarında Bakım ve Arşivleme](84_Buyuk_Logo_Veritabanlarinda_Bakim_ve_Arsivleme.md)
+85. [SQL Execution Plan Okuma Rehberi](85_SQL_Execution_Plan_Okuma_Rehberi.md)
+86. [Query Store ve Plan Regresyon Analizi](86_Query_Store_ve_Plan_Regresyon_Analizi.md)
+87. [Index Kullanım ve Statistics Analizi](87_Index_Kullanim_ve_Statistics_Analizi.md)
+88. [Parameter Sniffing ve Plan Kararlılığı](88_Parameter_Sniffing_ve_Plan_Kararliligi.md)
+89. [ASYNC_NETWORK_IO ve İstemci Tüketim Problemleri](89_ASYNC_NETWORK_IO_ve_Istemci_Tuketim_Problemleri.md)
+90. [Logo Servis Performansı ve Uçtan Uca Gecikme Analizi](90_Logo_Servis_Performansi_ve_Uctan_Uca_Gecikme_Analizi.md)
+91. [Logo Rapor Sorgularında Tuning Kalıpları](91_Logo_Rapor_Sorgularinda_Tuning_Kaliplari.md)
+92. [SQL Performans Release Checklist](92_SQL_Performans_Release_Checklist.md)
 
 ## Bilgi Güven Seviyeleri
 
