@@ -89,6 +89,12 @@ Bu repository iki amaca hizmet eder:
 69. [Batch İşlemler, Retry ve Backoff](69_Batch_Islemler_Retry_ve_Backoff.md)
 70. [Entegrasyon Log, Queue ve Reconciliation Modeli](70_Entegrasyon_Log_Queue_ve_Reconciliation_Modeli.md)
 71. [MES → Logo Uçtan Uca Referans Mimari](71_MES_Logo_Uctan_Uca_Referans_Mimari.md)
+72. [LIMS ve WMS Entegrasyon Mimarisi](72_LIMS_WMS_Entegrasyon_Mimarisi.md)
+73. [Outbox / Inbox Pattern ve Event-Driven Entegrasyon](73_Outbox_Inbox_Pattern_ve_Event_Driven_Entegrasyon.md)
+74. [e-Fatura ve e-İrsaliye Entegrasyon Bağlantıları](74_EFatura_EIrsaliye_Entegrasyon_Baglantilari.md)
+75. [Muhasebe Entegrasyon Hataları ve Kontrol Listesi](75_Muhasebe_Entegrasyon_Hatalari_ve_Kontrol_Listesi.md)
+76. [Scheduled Job ve Background Worker Mimarisi](76_Scheduled_Job_ve_Background_Worker_Mimarisi.md)
+77. [Monitoring, Observability ve Operasyon Runbook](77_Monitoring_Observability_ve_Operasyon_Runbook.md)
 
 ## Kapsam
 
@@ -120,6 +126,11 @@ Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirile
 - Batch, retry, backoff ve dead-letter yaklaşımları
 - Entegrasyon log, queue ve reconciliation modelleri
 - MES / LIMS / WMS entegrasyon örnekleri
+- Outbox/Inbox ve event-driven entegrasyon tasarımları
+- e-Fatura/e-İrsaliye bağlantıları ve elektronik belge reconciliation
+- Muhasebe entegrasyon hata kontrolleri
+- Scheduled job ve background worker mimarileri
+- Monitoring, observability ve operasyon runbook yaklaşımı
 - Gerçek hata mesajları ve çözüm notları
 - Sürüm bazlı davranış farkları
 - Test, rollback, retry ve idempotent entegrasyon tasarımları
