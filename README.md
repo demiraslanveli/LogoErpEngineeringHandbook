@@ -1,6 +1,6 @@
 # Logo Objects Master Book
 
-Logo Tiger Enterprise, Logo Objects, ProductionApplication, SQL Server, detaylı üretim, seri/lot, kalite, maliyetlendirme ve MES entegrasyonları için yaşayan teknik bilgi tabanı.
+Logo Tiger Enterprise, Logo Objects, ProductionApplication, SQL Server, detaylı üretim, seri/lot, kalite, maliyetlendirme ve MES/LIMS/WMS entegrasyonları için yaşayan teknik bilgi tabanı.
 
 Bu repository iki amaca hizmet eder:
 
@@ -13,7 +13,7 @@ Bu repository iki amaca hizmet eder:
 - Doğrudan SQL `INSERT` / `UPDATE` / `DELETE` yalnızca istisnai ve kontrollü senaryolarda değerlendirilmelidir.
 - Veri bütünlüğü, maliyetlendirme, seri/lot izlenebilirliği ve Logo iş kuralları önceliklidir.
 - Detaylı üretim entegrasyonlarında ara yazılım operasyon katmanı olabilir; resmi stok, üretim ve maliyet hareketleri Logo tarafında eksiksiz oluşmalıdır.
-- Kesin doğrulanmamış Logo Objects enum, field veya tablo davranışları sürüm bağımlılığı belirtilmeden kesin bilgi olarak yazılmamalıdır.
+- Kesin doğrulanmamış enum, field veya tablo davranışı sürüm bağımlılığı belirtilmeden kesin bilgi olarak yazılmamalıdır.
 - Gerçek projelerde öğrenilen yeni bilgiler ilgili bölümlere ayrı commitlerle eklenmelidir.
 
 ## Kitap Bölümleri
@@ -66,7 +66,7 @@ Bu repository iki amaca hizmet eder:
 46. [UNITSETL / ITMUNITA / UNITBARCODE](46_UNITSETL_ITMUNITA_UNITBARCODE.md)
 47. [PRODORD Alan Sözlüğü](47_PRODORD_Alan_Sozlugu.md)
 48. [Stok Envanter SQL Kalıpları](48_Stok_Envanter_SQL_Kaliplari.md)
-49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_KATALOGu.md)
+49. [Gerçek Hata ve Vaka Kataloğu](49_Gercek_Hata_ve_Vaka_Katalogu.md)
 50. [PRCLIST Fiyat Kartları ve Fiyat Mantığı](50_PRCLIST_Fiyat_Kartlari_ve_Fiyat_Mantigi.md)
 51. [PAYPLANS Ödeme Planı Mantığı](51_PAYPLANS_Odeme_Plani_Mantigi.md)
 52. [L_CAPIFIRM / L_CAPIPERIOD Firma ve Dönem Yapısı](52_L_CAPIFIRM_L_CAPIPERIOD_Firma_Donem_Yapisi.md)
@@ -95,49 +95,15 @@ Bu repository iki amaca hizmet eder:
 75. [Muhasebe Entegrasyon Hataları ve Kontrol Listesi](75_Muhasebe_Entegrasyon_Hatalari_ve_Kontrol_Listesi.md)
 76. [Scheduled Job ve Background Worker Mimarisi](76_Scheduled_Job_ve_Background_Worker_Mimarisi.md)
 77. [Monitoring, Observability ve Operasyon Runbook](77_Monitoring_Observability_ve_Operasyon_Runbook.md)
-
-## Kapsam
-
-Bu bilgi tabanı zaman içinde özellikle aşağıdaki alanlarda derinleştirilecektir:
-
-- `DataObjectType` gerçek enum sözlüğü ve doğrulanmış örnekler
-- Kart ve fiş bazında çalışan Logo Objects kod örnekleri
-- `IData` field sözlüğü ve tam CRUD kalıpları
-- XML import/export ve dış sistem veri eşleştirme kalıpları
-- `ProductionApplication` gerçek kullanım ve operasyon örnekleri
-- Üretim emri, iş emri ve operasyon ilişkileri
-- Seri/lot tablo ve nesne ilişkileri
-- Logo tablo/veri sözlüğü
-- TRCODE, LINETYPE ve IOCODE referans tabloları
-- Birim dönüşümü ve UINFO kullanım örnekleri
-- Cari hareket, muhasebe fişi ve belge bağlantı haritaları
-- STFICHE, STLINE, INVOICE, CLCARD, ITEMS, ORFICHE, ORFLINE ve PRODORD alan sözlükleri
-- PRCLIST fiyat ve PAYPLANS ödeme planı mantığı
-- Firma/dönem ve işyeri/fabrika/ambar organizasyon yapısı
-- PROJECT / PROJECTREF kullanımı
-- Döviz, KDV istisna/muafiyet ve finansal alanlar
-- Cari yaşlandırma ve FIFO kapama mantığı
-- Üretim maliyet ve maliyet sapma analizleri
-- Stok envanter ve yaşlandırma sorguları
-- SQL performans vaka analizleri
-- Logo Objects REST servisleri ve COM yaşam döngüsü
-- Çoklu firma/dönem servis mimarileri
-- Thread/concurrency ve session izolasyonu
-- Batch, retry, backoff ve dead-letter yaklaşımları
-- Entegrasyon log, queue ve reconciliation modelleri
-- MES / LIMS / WMS entegrasyon örnekleri
-- Outbox/Inbox ve event-driven entegrasyon tasarımları
-- e-Fatura/e-İrsaliye bağlantıları ve elektronik belge reconciliation
-- Muhasebe entegrasyon hata kontrolleri
-- Scheduled job ve background worker mimarileri
-- Monitoring, observability ve operasyon runbook yaklaşımı
-- Gerçek hata mesajları ve çözüm notları
-- Sürüm bazlı davranış farkları
-- Test, rollback, retry ve idempotent entegrasyon tasarımları
+78. [Index Stratejileri ve Sorgu Optimizasyonu](78_Index_Stratejileri_ve_Sorgu_Optimizasyonu.md)
+79. [Logo Tablolarında Trigger Tasarımı](79_Logo_Tablolarinda_Trigger_Tasarimi.md)
+80. [Audit Log ve Değişiklik İzleme Stratejileri](80_Audit_Log_ve_Degisiklik_Izleme_Stratejileri.md)
+81. [Deadlock, Blocking ve Lock Analizi](81_Deadlock_Blocking_ve_Lock_Analizi.md)
+82. [TempDB, PAGELATCH ve I/O Teşhisi](82_TempDB_PAGELATCH_ve_IO_Teshisi.md)
+83. [SQL Server Error 701 ve Bellek Baskısı](83_SQL_Server_Error_701_ve_Bellek_Baskisi.md)
+84. [Büyük Logo Veritabanlarında Bakım ve Arşivleme](84_Buyuk_Logo_Veritabanlarinda_Bakim_ve_Arsivleme.md)
 
 ## Bilgi Güven Seviyeleri
-
-Yeni teknik bilgi eklenirken mümkün olduğunca aşağıdaki ayrım korunmalıdır:
 
 - **Doğrulanmış Bilgi:** Resmi dokümantasyon, çalışan kod veya tekrar test ile doğrulanmış bilgi.
 - **Saha Gözlemi:** Gerçek Logo ortamında gözlemlenmiş davranış.
@@ -146,8 +112,6 @@ Yeni teknik bilgi eklenirken mümkün olduğunca aşağıdaki ayrım korunmalıd
 - **Kontrol Edilmeli:** Henüz kesin doğrulanmamış bilgi.
 
 ## Repository Yaklaşımı
-
-Bu repository statik bir kitap değildir.
 
 ```text
 Gerçek problem
