@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\LogoErp.Reference.Core\LogoErp.Reference.Core.csproj" />
+    <ProjectReference Include="..\..\src\LogoErp.Reference.Application\LogoErp.Reference.Application.csproj" />
     <ProjectReference Include="..\..\src\LogoErp.Reference.Infrastructure\LogoErp.Reference.Infrastructure.csproj" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.6.4" />
     <PackageReference Include="MSTest.TestFramework" Version="3.6.4" />
