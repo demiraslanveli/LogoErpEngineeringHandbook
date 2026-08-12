@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LogoErp.Reference.Core\LogoErp.Reference.Core.csproj" />
+    <ProjectReference Include="..\LogoErp.Reference.Application\LogoErp.Reference.Application.csproj" />
+  </ItemGroup>
+
+  <!--
+    Logo Objects / UnityApplication COM references are intentionally not
+    hard-coded here. Add the exact references from the target Logo installation
+    and validate version/bitness compatibility in the deployment environment.
+  -->
+</Project>
