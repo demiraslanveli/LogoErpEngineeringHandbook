@@ -2,7 +2,7 @@
 
 **Logo ERP, Logo Objects, ProductionApplication, SQL Server ve Kurumsal Entegrasyonlar için Teknik Referans**
 
-Bu repository artık yalnızca Logo Objects kullanımını anlatan bir kitap değildir. İçerik; Logo ERP veri modeli, SDK geliştirme, detaylı üretim, seri/lot, kalite, maliyetlendirme, SQL Server, finans, entegrasyon, operasyon ve güvenlik başlıklarını kapsayan yaşayan bir mühendislik el kitabıdır.
+Bu repository yalnızca Logo Objects kullanımını anlatan bir kitap değildir. İçerik; Logo ERP veri modeli, SDK geliştirme, detaylı üretim, seri/lot, kalite, maliyetlendirme, SQL Server, finans, entegrasyon, operasyon ve güvenlik başlıklarını kapsayan yaşayan bir mühendislik el kitabıdır.
 
 ## Kitap Mimarisi
 
@@ -26,6 +26,13 @@ Genel yapı ve yayın prensipleri:
 100. bölümden itibaren kitap, mevcut teorik ve saha bilgisini çalışan bir referans uygulama mimarisine dönüştürmektedir.
 
 - [100 — Referans .NET Çözüm Mimarisi](100_Referans_DotNet_Cozum_Mimarisi.md)
+- [101 — Configuration ve Company / Period Context](101_Configuration_ve_CompanyPeriod_Context.md)
+- [102 — Logo Session Factory ve IApplication Wrapper](102_Logo_Session_Factory_ve_IApplication_Wrapper.md)
+- [103 — IData / IQuery Helper ve Adapter Katmanı](103_IData_IQuery_Helper_ve_Adapter_Katmani.md)
+- [104 — LogoOperationResult ve Generic Hata Parser](104_LogoOperationResult_ve_Generic_Hata_Parser.md)
+- [105 — Structured Logging, CorrelationId ve Audit Context](105_Structured_Logging_CorrelationId_ve_Audit_Context.md)
+- [106 — Transaction Sınırı, Idempotency ve Retry Politikası](106_Transaction_Siniri_Idempotency_ve_Retry_Politikasi.md)
+- [107 — Application Service, Repository ve Mapper Ayrımı](107_Application_Service_Repository_ve_Mapper_Ayrimi.md)
 
 ## Temel Prensipler
 
