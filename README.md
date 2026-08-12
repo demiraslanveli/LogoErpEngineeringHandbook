@@ -46,7 +46,7 @@ Handbook içindeki 100+ uygulamalı bölümün gerçek `net48` proje iskeleti re
 - [109 — Configuration Encryption ve Secret Yönetimi](109_Configuration_Encryption_ve_Secret_Yonetimi.md)
 - [110 — Batch Processor ve Toplu İşlem Mimarisi](110_Batch_Processor_ve_Toplu_Islem_Mimarisi.md)
 - [111 — Background Worker ve Windows Service Çalışma Modeli](111_Background_Worker_ve_Windows_Service_Calisma_Modeli.md)
-- [112 — Health Check ve Dependent Service Kontrolleri](112_HealthCheck_ve_Dependent_Service_Kontrolleri.md)
+- [112 — Health Check ve Dependent Service Kontrolleri](112_Health_Check_ve_Dependent_Service_Kontrolleri.md)
 - [113 — Fake Adapter, Test Doubles ve Mock Stratejisi](113_Fake_Adapter_Test_Doubles_ve_Mock_Stratejisi.md)
 - [114 — Integration Test Standardı ve Test Ortam Stratejisi](114_Integration_Test_Standarti_ve_Test_Ortam_Stratejisi.md)
 - [115 — Malzeme Kartı Servisi Referans Implementasyonu](115_Malzeme_Karti_Servisi_Referans_Implementasyonu.md)
