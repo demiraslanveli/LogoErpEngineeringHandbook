@@ -110,6 +110,13 @@ Bu repository iki amaca hizmet eder:
 90. [Logo Servis Performansı ve Uçtan Uca Gecikme Analizi](90_Logo_Servis_Performansi_ve_Uctan_Uca_Gecikme_Analizi.md)
 91. [Logo Rapor Sorgularında Tuning Kalıpları](91_Logo_Rapor_Sorgularinda_Tuning_Kaliplari.md)
 92. [SQL Performans Release Checklist](92_SQL_Performans_Release_Checklist.md)
+93. [SQL Agent ve Database Mail Mimarisi](93_SQL_Agent_ve_Database_Mail_Mimarisi.md)
+94. [Backup, Restore ve Disaster Recovery Stratejisi](94_Backup_Restore_ve_Disaster_Recovery_Stratejisi.md)
+95. [HA/DR ve Always On Mantığı](95_HA_DR_ve_AlwaysOn_Mantigi.md)
+96. [SQL Bakım Job'ları ve Operasyon Standardı](96_SQL_Bakim_Joblari_ve_Operasyon_Standardi.md)
+97. [SQL Güvenlik, Yetkilendirme ve Least Privilege](97_SQL_Guvenlik_Yetkilendirme_ve_Least_Privilege.md)
+98. [Logo Servis Hesapları ve Windows Service Çalışma Modeli](98_Logo_Servis_Hesaplari_ve_Windows_Service_Calisma_Modeli.md)
+99. [Operasyonel Güvenlik ve Erişim Kontrol Listesi](99_Operasyonel_Guvenlik_ve_Erisim_Kontrol_Listesi.md)
 
 ## Bilgi Güven Seviyeleri
 
