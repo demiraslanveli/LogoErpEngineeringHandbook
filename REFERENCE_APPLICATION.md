@@ -30,6 +30,7 @@ src/
 │
 ├── LogoErp.Reference.LogoAdapter/
 │   ├── Customers/
+│   ├── Data/
 │   ├── Documents/
 │   ├── Materials/
 │   ├── Orders/
@@ -94,20 +95,44 @@ Validation ve orchestration burada yapılır.
 
 Logo Objects / UnityApplication / ProductionApplication bağımlılığı yalnızca bu projede bulunmalıdır.
 
-Mevcut adapter sınırları:
+Session katmanı artık iki seviyelidir:
 
 ```text
 LogoSessionAdapter
-LogoMaterialGateway
-LogoCustomerGateway
-LogoOrderGateway
-LogoDispatchInvoiceGateway
-LogoProductionGateway
+        ↓
+ILogoSdkBridge
+        ↓
+Verified Logo SDK Binding
 ```
 
-Gerçek Logo SDK referansı hedef Logo kurulumundan doğrulanarak bu projeye eklenmelidir. COM type, `DataObjectType`, field adı, login davranışı veya `ProductionApplication` metodu doğrulanmadan framework içinde sabitlenmez.
+`LogoSessionAdapter` yalnızca bridge gerçekten login olduğunda açık kabul edilir. Doğrulanmış SDK binding yoksa `UnconfiguredLogoSdkBridge` kullanılır ve sistem bilinçli olarak fail-fast davranır.
 
-Bu nedenle henüz doğrulanmamış adapter metotları bilinçli olarak `LOGO_ADAPTER_NOT_CONFIGURED` / `PRODUCTION_ADAPTER_NOT_CONFIGURED` sonucu döndürmektedir. Bu yaklaşım, tahmine dayalı Logo SDK kodunun production entegrasyonuna sızmasını engeller.
+IData tarafı da sürümden bağımsız bridge'e ayrılmıştır:
+
+```text
+LogoMaterialGateway / LogoCustomerGateway
+        ↓
+ILogoDataObjectFactory
+        ↓
+ILogoDataObject
+        ↓
+Verified IData COM Wrapper
+```
+
+Mevcut Data katmanı:
+
+```text
+ILogoDataObject
+ILogoDataObjectLine
+ILogoDataObjectFactory
+MaterialDataMappingProfile
+CustomerDataMappingProfile
+UnconfiguredLogoDataObjectFactory
+```
+
+Malzeme ve cari gateway'leri artık `SetField → Post → Logo ErrorCode/ErrorDescription` akışını bu bridge üzerinden uygular. Kesin `DataObjectType` ve field isimleri hedef Logo sürümünde doğrulanmadan mapping profile'a production değeri verilmez.
+
+Gerçek Logo SDK referansı hedef Logo kurulumundan doğrulanarak bu projeye eklenmelidir. COM type, `DataObjectType`, field adı, login davranışı veya `ProductionApplication` metodu doğrulanmadan framework içinde sabitlenmez.
 
 ### Infrastructure
 
@@ -165,6 +190,8 @@ Application Services
         ↓
 Gateway / LogoAdapter
 ```
+
+`CompositionRoot.CreateLogoSession()` firma/dönem context'i ile session üretir. Doğrulanmış SDK bridge bağlanana kadar güvenli default olarak `UnconfiguredLogoSdkBridge` kullanılır.
 
 `Program.cs` SQL health check başarısız olduğunda ayrı exit code döndürür. Worker loop `CancellationToken` ile kontrollü kapanır ve iteration seviyesindeki hatayı host sürecini zorunlu olarak düşürmeden loglar.
 
@@ -247,25 +274,30 @@ Production veritabanı integration test hedefi olarak kullanılmamalıdır.
 
 ## Repository Adı
 
-Handbook kapsamı yalnızca Logo Objects ile sınırlı olmadığı için önerilen repository adı:
+Repository artık:
 
 ```text
 LogoErpEngineeringHandbook
 ```
 
-Bağlı GitHub aracı repository yeniden adlandırma operasyonunu expose etmediği için rename işlemi bu çalışma akışından uygulanamamıştır. İçerik ve başlık tarafında ürün adı zaten `Logo ERP Engineering Handbook` olarak kullanılmaktadır.
+adıyla devam etmektedir.
 
 ## Sıradaki Kod Adımları
 
-- gerçek composition root içinde application service wiring
-- Logo session scope yönetimi
+- verified `ILogoSdkBridge` implementasyonu
+- verified `ILogoDataObjectFactory` COM wrapper
+- malzeme zorunlu birim seti mapping'i
+- cari kart ek zorunlu alan mapping'i
+- order/dispatch/invoice line mapping profile'ları
 - structured logging sink
-- health-check sonuçlarının persistence/log entegrasyonu
-- gerçek Logo SDK reference wiring standardı
-- verified material/customer IData implementation
-- verified order/dispatch/invoice IData implementation
+- Logo session health persistence
 - verified ProductionApplication implementation
 - deployment rollback scripti
 - worker için service-host dönüşümü
+
+İlgili handbook bölümleri:
+
+- [139 — Logo SDK Binding ve Session Doğrulama Standardı](139_Logo_SDK_Binding_ve_Session_Dogrulama_Standarti.md)
+- [140 — IData Bridge ve Master Data Mapping Standardı](140_IData_Bridge_ve_Master_Data_Mapping_Standarti.md)
 
 > Referans uygulama, handbook içindeki mimari prensiplerin gerçek kod karşılığı olarak geliştirilmektedir.
