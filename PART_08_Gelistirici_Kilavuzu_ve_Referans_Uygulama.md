@@ -45,17 +45,19 @@ Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede ku
 - [136 — SQL Idempotency Repository Gerçek Kod](136_SQL_IdempotencyRepository_Gercek_Kod.md)
 - [137 — HealthCheckRunner Gerçek Kod](137_HealthCheckRunner_Gercek_Kod.md)
 - [138 — IntegrationTestFixture Gerçek Kod](138_IntegrationTestFixture_Gercek_Kod.md)
+- [139 — Logo SDK Binding ve Session Doğrulama Standardı](139_Logo_SDK_Binding_ve_Session_Dogrulama_Standarti.md)
+- [140 — IData Bridge ve Master Data Mapping Standardı](140_IData_Bridge_ve_Master_Data_Mapping_Standarti.md)
 
 ## Sıradaki Konular
 
-- gerçek `.csproj` / `.sln` örnekleri
-- ortak DTO ve result sınıfları
-- gerçek material/customer/order service class dosyaları
-- deployment PowerShell scriptleri
-- Windows Service install/uninstall scriptleri
-- operasyon dashboard metrik modeli
-- örnek SQL queue/reconciliation scriptleri
-- release artifact yapısı
+- verified `ILogoSdkBridge` implementasyonu
+- verified `ILogoDataObjectFactory` COM wrapper
+- order/dispatch/invoice line mapping profile'ları
+- ProductionApplication bridge implementasyonu
+- structured logging sink
+- Logo session health persistence
+- deployment rollback scripti
+- Windows Service host dönüşümü
 
 ## Referans Teknoloji Seti
 
