@@ -32,16 +32,24 @@ Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede ku
 - [123 — Windows Service Host ve Runtime Yönetimi](123_Windows_Service_Host_ve_Runtime_Yonetimi.md)
 - [124 — Composition Root ve Dependency Wiring](124_Composition_Root_ve_Dependency_Wiring.md)
 - [125 — Uçtan Uca Örnek Entegrasyon Akışı](125_Uctan_Uca_Ornek_Entegrasyon_Akisi.md)
+- [126 — Referans Solution ve Klasör İskeleti](126_Referans_Solution_ve_Klasor_Iskeleti.md)
+- [127 — Örnek Interface ve Class Sözleşmeleri](127_Ornek_Interface_ve_Class_Sozlesmeleri.md)
+- [128 — SQL Bootstrap, Migration ve Schema Versioning](128_SQL_Bootstrap_Migration_ve_Schema_Versioning.md)
+- [129 — Deployment, Rollback ve Release Prosedürü](129_Deployment_Rollback_ve_Release_Proseduru.md)
+- [130 — Production Readiness Checklist](130_Production_Readiness_Checklist.md)
+- [131 — Release Versioning ve Uyumluluk Modeli](131_Release_Versioning_ve_Uyumluluk_Modeli.md)
 
 ## Sıradaki Konular
 
-- gerçek solution / klasör iskeleti
-- örnek interface ve class dosyaları
-- SQL migration / bootstrap script seti
-- deployment ve rollback standardı
-- production readiness checklist
-- örnek integration test fixture'ları
-- servis versioning ve release stratejisi
+- gerçek C# proje dosyası örnekleri
+- composition root çalışan kod iskeleti
+- Windows Service `Program` ve service class örnekleri
+- migration runner implementasyonu
+- idempotency repository gerçek SQL kodu
+- health-check runner kodu
+- sample integration test fixture
+- deployment PowerShell scriptleri
+- operasyon dashboard metrik modeli
 
 ## Referans Teknoloji Seti
 
@@ -83,6 +91,8 @@ Configuration
 Monitoring
 Testing
 Reconciliation
+Deployment
+Versioning
 ```
 
 > Bu bölüm kitabın teorik bilgilerini çalışan bir uygulama mimarisine dönüştüren uygulamalı kısımdır.
