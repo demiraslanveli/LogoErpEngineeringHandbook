@@ -1,6 +1,7 @@
 using System;
-using LogoErp.Reference.Core.Context;
-using LogoErp.Reference.LogoAdapter.Session;
+using System.Threading;
+using LogoErp.Reference.Worker.Composition;
+using LogoErp.Reference.Worker.Runtime;
 
 namespace LogoErp.Reference.Worker
 {
@@ -10,17 +11,26 @@ namespace LogoErp.Reference.Worker
         {
             try
             {
-                var context = LoadContext();
+                var root = CompositionRoot.Build();
+                var healthCheck = new HealthCheckRunner(root.Options);
 
-                using (var logoSession = new LogoSessionAdapter(context))
+                var health = healthCheck.CheckSql();
+                if (!health.Success)
                 {
-                    logoSession.Open();
+                    Console.Error.WriteLine($"Health check failed: {health.ErrorCode} - {health.Message}");
+                    return 2;
+                }
 
-                    // TODO: Resolve application services from Composition Root.
-                    // TODO: Run batch/background workflow.
-                    // TODO: Write structured operation and health logs.
+                using (var cancellation = new CancellationTokenSource())
+                {
+                    Console.CancelKeyPress += (sender, eventArgs) =>
+                    {
+                        eventArgs.Cancel = true;
+                        cancellation.Cancel();
+                    };
 
-                    logoSession.Close();
+                    var worker = new WorkerLoop(root.Options, RunIteration);
+                    worker.Run(cancellation.Token);
                 }
 
                 return 0;
@@ -32,12 +42,11 @@ namespace LogoErp.Reference.Worker
             }
         }
 
-        private static CompanyPeriodContext LoadContext()
+        private static void RunIteration()
         {
-            // Example only. Production values must come from protected configuration.
-            return new CompanyPeriodContext(
-                companyNumber: 1,
-                periodNumber: 1);
+            // Composition Root ilerleyen adımda gerçek application service'lerini burada çözecek.
+            // Logo Objects / ProductionApplication session yaşam döngüsü iteration veya scoped unit sınırında yönetilecek.
+            Console.WriteLine($"Worker iteration: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
         }
     }
 }
