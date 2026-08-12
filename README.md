@@ -43,6 +43,12 @@ Bu repository yalnızca Logo Objects kullanımını anlatan bir kitap değildir.
 - [117 — Sipariş Servisi Referans Implementasyonu](117_Siparis_Servisi_Referans_Implementasyonu.md)
 - [118 — İrsaliye / Fatura Servisi Referans Implementasyonu](118_Irsaliye_Fatura_Servisi_Referans_Implementasyonu.md)
 - [119 — Üretim Entegrasyon Servisi Referans Implementasyonu](119_Uretim_Entegrasyon_Servisi_Referans_Implementasyonu.md)
+- [120 — Ortak Mapper ve Validator Kütüphanesi](120_Ortak_Mapper_ve_Validator_Kutuphanesi.md)
+- [121 — Reconciliation Repository ve Karşılaştırma Modeli](121_Reconciliation_Repository_ve_Karsilastirma_Modeli.md)
+- [122 — Idempotency Store SQL Şeması](122_Idempotency_Store_SQL_Semasi.md)
+- [123 — Windows Service Host ve Runtime Yönetimi](123_Windows_Service_Host_ve_Runtime_Yonetimi.md)
+- [124 — Composition Root ve Dependency Wiring](124_Composition_Root_ve_Dependency_Wiring.md)
+- [125 — Uçtan Uca Örnek Entegrasyon Akışı](125_Uctan_Uca_Ornek_Entegrasyon_Akisi.md)
 
 ## Temel Prensipler
 
