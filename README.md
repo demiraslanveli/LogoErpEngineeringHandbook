@@ -55,6 +55,13 @@ Bu repository yalnızca Logo Objects kullanımını anlatan bir kitap değildir.
 - [129 — Deployment, Rollback ve Release Prosedürü](129_Deployment_Rollback_ve_Release_Proseduru.md)
 - [130 — Production Readiness Checklist](130_Production_Readiness_Checklist.md)
 - [131 — Release Versioning ve Uyumluluk Modeli](131_Release_Versioning_ve_Uyumluluk_Modeli.md)
+- [132 — Program.cs ve Service Entry Point](132_ProgramCS_ve_Service_EntryPoint.md)
+- [133 — Windows Service Class ve Lifecycle Kodu](133_Windows_Service_Class_ve_Lifecycle_Kodu.md)
+- [134 — Composition Root Gerçek Kod İskeleti](134_CompositionRoot_Gercek_Kod_Iskeleti.md)
+- [135 — Migration Runner Gerçek Kod İskeleti](135_MigrationRunner_Gercek_Kod_Iskeleti.md)
+- [136 — SQL Idempotency Repository Gerçek Kod](136_SQL_IdempotencyRepository_Gercek_Kod.md)
+- [137 — HealthCheckRunner Gerçek Kod](137_HealthCheckRunner_Gercek_Kod.md)
+- [138 — IntegrationTestFixture Gerçek Kod](138_IntegrationTestFixture_Gercek_Kod.md)
 
 ## Temel Prensipler
 
