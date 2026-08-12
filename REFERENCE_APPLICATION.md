@@ -21,7 +21,7 @@ src/
 │   └── Results/
 │
 ├── LogoErp.Reference.Application/
-│   ├── Gateways/
+│   ├── Abstractions/
 │   └── Services/
 │
 ├── LogoErp.Reference.Infrastructure/
@@ -37,6 +37,8 @@ src/
 │   └── Session/
 │
 └── LogoErp.Reference.Worker/
+    ├── Composition/
+    ├── Runtime/
     └── Program.cs
 
 tests/
@@ -82,6 +84,8 @@ Mevcut servis örnekleri:
 MaterialService
 CustomerService
 OrderService
+DispatchInvoiceService
+ProductionService
 ```
 
 Validation ve orchestration burada yapılır.
@@ -137,14 +141,32 @@ LOGOERP_WORKER_INTERVAL_SECONDS
 
 Composition root ve runtime host katmanıdır.
 
-Sorumlulukları:
+Mevcut runtime parçaları:
 
-- configuration yüklemek,
-- dependency graph oluşturmak,
-- Logo session açmak/kapatmak,
-- application service çalıştırmak,
-- structured log üretmek,
-- exit code yönetmek.
+```text
+CompositionRoot
+HealthCheckRunner
+WorkerLoop
+Program.cs
+```
+
+Çalışma sırası:
+
+```text
+EnvironmentConfigurationLoader
+        ↓
+CompositionRoot
+        ↓
+SQL Health Check
+        ↓
+WorkerLoop
+        ↓
+Application Services
+        ↓
+Gateway / LogoAdapter
+```
+
+`Program.cs` SQL health check başarısız olduğunda ayrı exit code döndürür. Worker loop `CancellationToken` ile kontrollü kapanır ve iteration seviyesindeki hatayı host sürecini zorunlu olarak düşürmeden loglar.
 
 ## Güncel Solution Projeleri
 
@@ -183,11 +205,14 @@ Application katmanının `LogoAdapter` projesine doğrudan referansı yoktur. B�
 
 ## Fake Adapter Stratejisi
 
-Test projesinde ilk fake adapter'lar oluşturuldu:
+Test projesinde mevcut fake adapter'lar:
 
 ```text
 FakeLogoMaterialGateway
 FakeCustomerGateway
+FakeOrderGateway
+FakeDispatchInvoiceGateway
+FakeProductionGateway
 ```
 
 Fake adapter'lar application-service validation/orchestration testlerini gerçek Logo kurulumu veya COM registration gerektirmeden çalıştırmak içindir.
@@ -220,18 +245,27 @@ LOGOERP_TEST_SQL
 
 Production veritabanı integration test hedefi olarak kullanılmamalıdır.
 
+## Repository Adı
+
+Handbook kapsamı yalnızca Logo Objects ile sınırlı olmadığı için önerilen repository adı:
+
+```text
+LogoErpEngineeringHandbook
+```
+
+Bağlı GitHub aracı repository yeniden adlandırma operasyonunu expose etmediği için rename işlemi bu çalışma akışından uygulanamamıştır. İçerik ve başlık tarafında ürün adı zaten `Logo ERP Engineering Handbook` olarak kullanılmaktadır.
+
 ## Sıradaki Kod Adımları
 
-- composition root'u configuration loader ile bağlamak
-- background worker loop
-- health-check runner entegrasyonu
-- fake order/document/production gateway'leri
-- dispatch/invoice application service
-- production application service
+- gerçek composition root içinde application service wiring
+- Logo session scope yönetimi
+- structured logging sink
+- health-check sonuçlarının persistence/log entegrasyonu
 - gerçek Logo SDK reference wiring standardı
 - verified material/customer IData implementation
 - verified order/dispatch/invoice IData implementation
 - verified ProductionApplication implementation
 - deployment rollback scripti
+- worker için service-host dönüşümü
 
 > Referans uygulama, handbook içindeki mimari prensiplerin gerçek kod karşılığı olarak geliştirilmektedir.
