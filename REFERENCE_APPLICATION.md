@@ -16,25 +16,32 @@ LogoErp.Reference.sln
 src/
 ├── LogoErp.Reference.Core/
 │   ├── Abstractions/
+│   ├── Configuration/
 │   ├── Context/
 │   └── Results/
 │
 ├── LogoErp.Reference.Application/
-│   ├── Abstractions/
+│   ├── Gateways/
 │   └── Services/
 │
 ├── LogoErp.Reference.Infrastructure/
+│   ├── Configuration/
 │   └── Sql/
 │
 ├── LogoErp.Reference.LogoAdapter/
-│   ├── Session/
-│   └── Materials/
+│   ├── Customers/
+│   ├── Documents/
+│   ├── Materials/
+│   ├── Orders/
+│   ├── Production/
+│   └── Session/
 │
 └── LogoErp.Reference.Worker/
     └── Program.cs
 
 tests/
 └── LogoErp.Reference.IntegrationTests/
+    └── Fakes/
 
 database/
 └── migrations/
@@ -51,6 +58,7 @@ Logo SDK'sından bağımsız temel sözleşmeler ve ortak modeller:
 
 - `OperationResult`
 - `CompanyPeriodContext`
+- `LogoErpOptions`
 - `ILogoSession`
 - `IIdempotencyStore`
 
@@ -58,28 +66,44 @@ Logo SDK'sından bağımsız temel sözleşmeler ve ortak modeller:
 
 ERP iş akışını yöneten application-service katmanıdır. Logo COM tipi bilmez.
 
-İlk örnek:
+Mevcut gateway sınırları:
 
 ```text
-IMaterialService
-        ↓
-MaterialService
-        ↓
 ILogoMaterialGateway
+ICustomerGateway
+IOrderGateway
+IDispatchInvoiceGateway
+IProductionGateway
+```
+
+Mevcut servis örnekleri:
+
+```text
+MaterialService
+CustomerService
+OrderService
 ```
 
 Validation ve orchestration burada yapılır.
 
 ### LogoAdapter
 
-Logo Objects / UnityApplication bağımlılığı yalnızca bu projede bulunmalıdır.
+Logo Objects / UnityApplication / ProductionApplication bağımlılığı yalnızca bu projede bulunmalıdır.
+
+Mevcut adapter sınırları:
 
 ```text
 LogoSessionAdapter
 LogoMaterialGateway
+LogoCustomerGateway
+LogoOrderGateway
+LogoDispatchInvoiceGateway
+LogoProductionGateway
 ```
 
-Gerçek Logo SDK referansı hedef Logo kurulumundan doğrulanarak bu projeye eklenmelidir. COM type, DataObjectType enum, field adı veya login davranışı doğrulanmadan framework içinde sabitlenmemelidir.
+Gerçek Logo SDK referansı hedef Logo kurulumundan doğrulanarak bu projeye eklenmelidir. COM type, `DataObjectType`, field adı, login davranışı veya `ProductionApplication` metodu doğrulanmadan framework içinde sabitlenmez.
+
+Bu nedenle henüz doğrulanmamış adapter metotları bilinçli olarak `LOGO_ADAPTER_NOT_CONFIGURED` / `PRODUCTION_ADAPTER_NOT_CONFIGURED` sonucu döndürmektedir. Bu yaklaşım, tahmine dayalı Logo SDK kodunun production entegrasyonuna sızmasını engeller.
 
 ### Infrastructure
 
@@ -91,6 +115,23 @@ Logo ERP dışındaki teknik altyapılar:
 - logging
 - configuration
 - queue/reconciliation altyapısı
+
+Configuration örneği:
+
+```text
+EnvironmentConfigurationLoader
+```
+
+Secret değerler repository/config dosyasında tutulmaz. Referans environment variable seti:
+
+```text
+LOGOERP_FIRM_NUMBER
+LOGOERP_PERIOD_NUMBER
+LOGOERP_USER
+LOGOERP_PASSWORD
+LOGOERP_SQL
+LOGOERP_WORKER_INTERVAL_SECONDS
+```
 
 ### Worker
 
@@ -138,7 +179,18 @@ Infrastructure
 Core
 ```
 
-Application katmanının `LogoAdapter` projesine doğrudan referansı yoktur. Böylece Logo SDK'sı olmadan application logic test edilebilir.
+Application katmanının `LogoAdapter` projesine doğrudan referansı yoktur. Böylece Logo SDK'sı olmadan application logic fake gateway'lerle test edilebilir.
+
+## Fake Adapter Stratejisi
+
+Test projesinde ilk fake adapter'lar oluşturuldu:
+
+```text
+FakeLogoMaterialGateway
+FakeCustomerGateway
+```
+
+Fake adapter'lar application-service validation/orchestration testlerini gerçek Logo kurulumu veya COM registration gerektirmeden çalıştırmak içindir.
 
 ## Logo SDK Entegrasyon Kuralı
 
@@ -151,7 +203,7 @@ Gateway Interface
       ↓
 LogoAdapter
       ↓
-IApplication / IData
+IApplication / IData / ProductionApplication
       ↓
 Logo ERP
 ```
@@ -170,15 +222,16 @@ Production veritabanı integration test hedefi olarak kullanılmamalıdır.
 
 ## Sıradaki Kod Adımları
 
-- configuration loader ve protected secret modeli
-- gerçek composition root
-- fake Logo adapter
-- cari kart gateway/service
-- sipariş gateway/service
-- irsaliye/fatura gateway/service
-- ProductionApplication adapter sınırı
+- composition root'u configuration loader ile bağlamak
 - background worker loop
 - health-check runner entegrasyonu
+- fake order/document/production gateway'leri
+- dispatch/invoice application service
+- production application service
+- gerçek Logo SDK reference wiring standardı
+- verified material/customer IData implementation
+- verified order/dispatch/invoice IData implementation
+- verified ProductionApplication implementation
 - deployment rollback scripti
 
 > Referans uygulama, handbook içindeki mimari prensiplerin gerçek kod karşılığı olarak geliştirilmektedir.
