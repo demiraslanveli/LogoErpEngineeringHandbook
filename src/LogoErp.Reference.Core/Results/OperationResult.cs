@@ -7,6 +7,7 @@ namespace LogoErp.Reference.Core.Results
     {
         public bool Success { get; private set; }
         public string Code { get; private set; }
+        public string ErrorCode => Code;
         public string Message { get; private set; }
         public string CorrelationId { get; private set; }
         public IReadOnlyDictionary<string, string> Metadata { get; private set; }
@@ -43,6 +44,11 @@ namespace LogoErp.Reference.Core.Results
                 throw new ArgumentException("Hata kodu boş olamaz.", nameof(code));
 
             return new OperationResult(false, code, message, correlationId, metadata);
+        }
+
+        public static OperationResult Fail(string message)
+        {
+            return Fail("OPERATION_FAILED", message);
         }
     }
 }
