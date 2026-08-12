@@ -2,33 +2,26 @@
 
 Bu bölüm 100. bölümden itibaren başlayan uygulamalı geliştirici kılavuzunu kapsar.
 
-Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede kullanılabilecek sürdürülebilir bir .NET entegrasyon uygulamasının nasıl tasarlanacağını adım adım göstermektir.
+Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede kullanılabilecek sürdürülebilir bir .NET Framework 4.8 entegrasyon uygulamasının nasıl tasarlanacağını adım adım göstermektir.
 
 ## Mevcut Bölümler
 
 - [100 — Referans .NET Çözüm Mimarisi](100_Referans_DotNet_Cozum_Mimarisi.md)
+- [101 — Configuration ve Company / Period Context](101_Configuration_ve_CompanyPeriod_Context.md)
+- [102 — Logo Session Factory ve IApplication Wrapper](102_Logo_Session_Factory_ve_IApplication_Wrapper.md)
+- [103 — IData / IQuery Helper ve Adapter Katmanı](103_IData_IQuery_Helper_ve_Adapter_Katmani.md)
+- [104 — LogoOperationResult ve Generic Hata Parser](104_LogoOperationResult_ve_Generic_Hata_Parser.md)
+- [105 — Structured Logging, CorrelationId ve Audit Context](105_Structured_Logging_CorrelationId_ve_Audit_Context.md)
+- [106 — Transaction Sınırı, Idempotency ve Retry Politikası](106_Transaction_Siniri_Idempotency_ve_Retry_Politikasi.md)
+- [107 — Application Service, Repository ve Mapper Ayrımı](107_Application_Service_Repository_ve_Mapper_Ayrimi.md)
 
-## Planlanan Konular
+## Sıradaki Konular
 
-- Configuration modeli
-- Company / Period context
-- Logo session factory
-- IApplication wrapper
-- IData helper
-- IQuery helper
-- repository / service ayrımı
-- transaction helper
 - validation pipeline
-- generic Logo error parser
-- integration result modeli
-- structured logging
-- correlation id
-- retry policy
-- idempotency store
+- configuration encryption
 - batch processor
 - background worker
 - health check
-- configuration encryption
 - test doubles / fake adapters
 - integration test standardı
 - örnek malzeme kartı servisi
