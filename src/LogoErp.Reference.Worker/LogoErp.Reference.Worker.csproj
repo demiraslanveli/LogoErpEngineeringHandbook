@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LogoErp.Reference.Core\LogoErp.Reference.Core.csproj" />
+    <ProjectReference Include="..\LogoErp.Reference.Application\LogoErp.Reference.Application.csproj" />
+    <ProjectReference Include="..\LogoErp.Reference.Infrastructure\LogoErp.Reference.Infrastructure.csproj" />
+    <ProjectReference Include="..\LogoErp.Reference.LogoAdapter\LogoErp.Reference.LogoAdapter.csproj" />
+  </ItemGroup>
+</Project>
