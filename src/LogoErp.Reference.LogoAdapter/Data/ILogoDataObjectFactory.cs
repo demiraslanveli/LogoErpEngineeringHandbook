@@ -4,6 +4,8 @@ namespace LogoErp.Reference.LogoAdapter.Data
 {
     public interface ILogoDataObjectFactory
     {
-        OperationResult<ILogoDataObject> Create(string dataObjectTypeKey);
+        OperationResult Create(
+            string dataObjectTypeKey,
+            out ILogoDataObject dataObject);
     }
 }
