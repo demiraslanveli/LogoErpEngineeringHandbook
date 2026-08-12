@@ -1,5 +1,7 @@
+using System;
 using LogoErp.Reference.Application.Abstractions;
 using LogoErp.Reference.Core.Results;
+using LogoErp.Reference.LogoAdapter.Data;
 using LogoErp.Reference.LogoAdapter.Session;
 
 namespace LogoErp.Reference.LogoAdapter.Materials
@@ -7,26 +9,59 @@ namespace LogoErp.Reference.LogoAdapter.Materials
     public sealed class LogoMaterialGateway : ILogoMaterialGateway
     {
         private readonly LogoSessionAdapter _session;
+        private readonly ILogoDataObjectFactory _factory;
+        private readonly MaterialDataMappingProfile _profile;
 
-        public LogoMaterialGateway(LogoSessionAdapter session)
+        public LogoMaterialGateway(
+            LogoSessionAdapter session,
+            ILogoDataObjectFactory factory,
+            MaterialDataMappingProfile profile)
         {
-            _session = session;
+            _session = session ?? throw new ArgumentNullException(nameof(session));
+            _factory = factory ?? throw new ArgumentNullException(nameof(factory));
+            _profile = profile ?? throw new ArgumentNullException(nameof(profile));
         }
 
         public OperationResult CreateMaterial(string code, string name)
         {
             if (!_session.IsOpen)
-                return OperationResult.Fail("Logo session is not open.");
+                return OperationResult.Fail(
+                    "LOGO_SESSION_CLOSED",
+                    "Logo session is not open.");
 
-            // TODO: Create the verified material IData object for the deployed Logo version.
-            // TODO: Map CODE, NAME and required master/unit fields.
-            // TODO: Execute Post/Save through Logo Objects and parse ErrorDesc/ErrorCode.
-            //
-            // Direct SQL INSERT is intentionally not used here because material-card
-            // creation must pass through Logo business rules and related records.
+            _profile.Validate();
 
-            return OperationResult.Fail(
-                "Logo Objects material mapping is not configured for this installation.");
+            var createResult = _factory.Create(
+                _profile.DataObjectTypeKey,
+                out var dataObject);
+
+            if (!createResult.Success)
+                return createResult;
+
+            using (dataObject)
+            {
+                var result = dataObject.SetField(_profile.CodeField, code);
+                if (!result.Success)
+                    return result;
+
+                result = dataObject.SetField(_profile.NameField, name);
+                if (!result.Success)
+                    return result;
+
+                result = dataObject.Post();
+                if (!result.Success)
+                {
+                    return OperationResult.Fail(
+                        string.IsNullOrWhiteSpace(dataObject.ErrorCode)
+                            ? "LOGO_IDATA_POST_FAILED"
+                            : dataObject.ErrorCode,
+                        string.IsNullOrWhiteSpace(dataObject.ErrorDescription)
+                            ? result.Message
+                            : dataObject.ErrorDescription);
+                }
+
+                return OperationResult.Ok("Material card created through Logo IData bridge.");
+            }
         }
     }
 }
