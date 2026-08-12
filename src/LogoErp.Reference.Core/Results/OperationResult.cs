@@ -50,5 +50,10 @@ namespace LogoErp.Reference.Core.Results
         {
             return Fail("OPERATION_FAILED", message);
         }
+
+        public static OperationResult Failure(string code, string message)
+        {
+            return Fail(code, message);
+        }
     }
 }
