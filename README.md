@@ -6,8 +6,6 @@ Bu repository yalnızca Logo Objects kullanımını anlatan bir kitap değildir.
 
 ## Kitap Mimarisi
 
-Genel yapı ve yayın prensipleri:
-
 - [Kitap Mimarisi](00_Kitap_Mimarisi.md)
 
 ## Ana Bölümler
@@ -23,7 +21,7 @@ Genel yapı ve yayın prensipleri:
 
 ## Güncel Uygulamalı Seri
 
-100. bölümden itibaren kitap, mevcut teorik ve saha bilgisini çalışan bir referans uygulama mimarisine dönüştürmektedir.
+100. bölümden itibaren kitap, teorik ve saha bilgisini çalışan referans uygulama mimarisine dönüştürmektedir.
 
 - [100 — Referans .NET Çözüm Mimarisi](100_Referans_DotNet_Cozum_Mimarisi.md)
 - [101 — Configuration ve Company / Period Context](101_Configuration_ve_CompanyPeriod_Context.md)
@@ -40,14 +38,18 @@ Genel yapı ve yayın prensipleri:
 - [112 — Health Check ve Dependent Service Kontrolleri](112_Health_Check_ve_Dependent_Service_Kontrolleri.md)
 - [113 — Fake Adapter, Test Doubles ve Mock Stratejisi](113_Fake_Adapter_Test_Doubles_ve_Mock_Stratejisi.md)
 - [114 — Integration Test Standardı ve Test Ortam Stratejisi](114_Integration_Test_Standarti_ve_Test_Ortam_Stratejisi.md)
+- [115 — Malzeme Kartı Servisi Referans Implementasyonu](115_Malzeme_Karti_Servisi_Referans_Implementasyonu.md)
+- [116 — Cari Kart Servisi Referans Implementasyonu](116_Cari_Kart_Servisi_Referans_Implementasyonu.md)
+- [117 — Sipariş Servisi Referans Implementasyonu](117_Siparis_Servisi_Referans_Implementasyonu.md)
+- [118 — İrsaliye / Fatura Servisi Referans Implementasyonu](118_Irsaliye_Fatura_Servisi_Referans_Implementasyonu.md)
+- [119 — Üretim Entegrasyon Servisi Referans Implementasyonu](119_Uretim_Entegrasyon_Servisi_Referans_Implementasyonu.md)
 
 ## Temel Prensipler
 
 - Resmi kart ve fiş işlemlerinde mümkün olduğunca Logo Objects kullanılmalıdır.
 - Doğrudan SQL `INSERT` / `UPDATE` / `DELETE` yalnızca istisnai ve kontrollü senaryolarda değerlendirilmelidir.
-- Logo veritabanı, yalnızca bağımsız tablolar bütünü değil; ERP iş kurallarının ürettiği ilişkili veri modelidir.
+- Logo veritabanı ERP iş kurallarının ürettiği ilişkili veri modelidir.
 - Veri bütünlüğü, maliyetlendirme, seri/lot izlenebilirliği ve muhasebe ilişkileri birlikte ele alınmalıdır.
-- Detaylı üretim entegrasyonlarında dış sistem operasyon katmanı olabilir; resmi ERP hareketleri Logo tarafında eksiksiz oluşmalıdır.
 - Entegrasyonlarda idempotency, retry, reconciliation, correlation id ve loglama standart kabul edilir.
 - Kesin doğrulanmamış Logo enum, field veya tablo davranışı sürüm bağımlılığı belirtilmeden kesin bilgi olarak yazılmaz.
 
@@ -61,22 +63,6 @@ Genel yapı ve yayın prensipleri:
 
 ## Repository Yaklaşımı
 
-Mevcut 1–99 bölüm dosyaları bağlantı geçmişini korumak için kök dizinde bırakılmıştır. İçerik artık `PART_01`–`PART_08` indeksleri üzerinden alan bazında okunur.
+Mevcut 1–99 bölüm dosyaları bağlantı geçmişini korumak için kök dizinde bırakılmıştır. İçerik `PART_01`–`PART_08` indeksleri üzerinden alan bazında okunur.
 
-```text
-Gerçek problem
-    ↓
-Analiz ve doğrulama
-    ↓
-Genelleştirilebilir teknik bilgi
-    ↓
-Uygun ana bölüm
-    ↓
-Ayrı chapter
-    ↓
-Ayrı Git commit
-    ↓
-Yaşayan mühendislik el kitabı
-```
-
-> Amaç sadece Logo Objects dokümantasyonu oluşturmak değil; Logo ERP üzerinde geliştirme, entegrasyon ve operasyon yapan ekipler için tekrar kullanılabilir bir mühendislik referansı oluşturmaktır.
+> Amaç Logo ERP üzerinde geliştirme, entegrasyon ve operasyon yapan ekipler için tekrar kullanılabilir bir mühendislik referansı oluşturmaktır.
