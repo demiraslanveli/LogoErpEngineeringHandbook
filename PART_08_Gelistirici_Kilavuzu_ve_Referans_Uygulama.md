@@ -21,16 +21,20 @@ Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede ku
 - [112 — Health Check ve Dependent Service Kontrolleri](112_Health_Check_ve_Dependent_Service_Kontrolleri.md)
 - [113 — Fake Adapter, Test Doubles ve Mock Stratejisi](113_Fake_Adapter_Test_Doubles_ve_Mock_Stratejisi.md)
 - [114 — Integration Test Standardı ve Test Ortam Stratejisi](114_Integration_Test_Standarti_ve_Test_Ortam_Stratejisi.md)
+- [115 — Malzeme Kartı Servisi Referans Implementasyonu](115_Malzeme_Karti_Servisi_Referans_Implementasyonu.md)
+- [116 — Cari Kart Servisi Referans Implementasyonu](116_Cari_Kart_Servisi_Referans_Implementasyonu.md)
+- [117 — Sipariş Servisi Referans Implementasyonu](117_Siparis_Servisi_Referans_Implementasyonu.md)
+- [118 — İrsaliye / Fatura Servisi Referans Implementasyonu](118_Irsaliye_Fatura_Servisi_Referans_Implementasyonu.md)
+- [119 — Üretim Entegrasyon Servisi Referans Implementasyonu](119_Uretim_Entegrasyon_Servisi_Referans_Implementasyonu.md)
 
 ## Sıradaki Konular
 
-- örnek malzeme kartı servisi
-- örnek cari kart servisi
-- örnek sipariş servisi
-- örnek irsaliye/fatura servisi
-- örnek üretim entegrasyon servisi
 - servisler için ortak validation/mapping örnekleri
 - test fixture ve örnek integration test senaryoları
+- reconciliation repository implementasyonu
+- idempotency store SQL şeması
+- Windows Service host örneği
+- örnek uçtan uca entegrasyon akışı
 
 ## Referans Teknoloji Seti
 
