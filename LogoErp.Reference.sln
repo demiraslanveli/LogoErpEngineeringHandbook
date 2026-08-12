@@ -4,7 +4,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoErp.Reference.Core", "src\LogoErp.Reference.Core\LogoErp.Reference.Core.csproj", "{A3DC6A92-980D-4D2C-B98A-3BA3F53B1352}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoErp.Reference.Application", "src\LogoErp.Reference.Application\LogoErp.Reference.Application.csproj", "{D27FCE62-B77A-4DF7-9A5B-9E7BC08920AA}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoErp.Reference.Infrastructure", "src\LogoErp.Reference.Infrastructure\LogoErp.Reference.Infrastructure.csproj", "{23D85AF0-1EE5-4C36-81CB-A2F10F5A5352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoErp.Reference.LogoAdapter", "src\LogoErp.Reference.LogoAdapter\LogoErp.Reference.LogoAdapter.csproj", "{E3FAD73A-C25D-45DD-A5C4-FD6E96266C8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoErp.Reference.Worker", "src\LogoErp.Reference.Worker\LogoErp.Reference.Worker.csproj", "{99C40876-CA8A-46F4-86F4-1A3FA72A25D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoErp.Reference.IntegrationTests", "tests\LogoErp.Reference.IntegrationTests\LogoErp.Reference.IntegrationTests.csproj", "{5B0E4A34-CF77-4E8B-B519-55D6759E3EEB}"
 EndProject
@@ -18,10 +24,22 @@ Global
         {A3DC6A92-980D-4D2C-B98A-3BA3F53B1352}.Debug|Any CPU.Build.0 = Debug|Any CPU
         {A3DC6A92-980D-4D2C-B98A-3BA3F53B1352}.Release|Any CPU.ActiveCfg = Release|Any CPU
         {A3DC6A92-980D-4D2C-B98A-3BA3F53B1352}.Release|Any CPU.Build.0 = Release|Any CPU
+        {D27FCE62-B77A-4DF7-9A5B-9E7BC08920AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {D27FCE62-B77A-4DF7-9A5B-9E7BC08920AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {D27FCE62-B77A-4DF7-9A5B-9E7BC08920AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {D27FCE62-B77A-4DF7-9A5B-9E7BC08920AA}.Release|Any CPU.Build.0 = Release|Any CPU
         {23D85AF0-1EE5-4C36-81CB-A2F10F5A5352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
         {23D85AF0-1EE5-4C36-81CB-A2F10F5A5352}.Debug|Any CPU.Build.0 = Debug|Any CPU
         {23D85AF0-1EE5-4C36-81CB-A2F10F5A5352}.Release|Any CPU.ActiveCfg = Release|Any CPU
         {23D85AF0-1EE5-4C36-81CB-A2F10F5A5352}.Release|Any CPU.Build.0 = Release|Any CPU
+        {E3FAD73A-C25D-45DD-A5C4-FD6E96266C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {E3FAD73A-C25D-45DD-A5C4-FD6E96266C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {E3FAD73A-C25D-45DD-A5C4-FD6E96266C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {E3FAD73A-C25D-45DD-A5C4-FD6E96266C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+        {99C40876-CA8A-46F4-86F4-1A3FA72A25D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {99C40876-CA8A-46F4-86F4-1A3FA72A25D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {99C40876-CA8A-46F4-86F4-1A3FA72A25D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {99C40876-CA8A-46F4-86F4-1A3FA72A25D5}.Release|Any CPU.Build.0 = Release|Any CPU
         {5B0E4A34-CF77-4E8B-B519-55D6759E3EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
         {5B0E4A34-CF77-4E8B-B519-55D6759E3EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
         {5B0E4A34-CF77-4E8B-B519-55D6759E3EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
