@@ -1,12 +1,15 @@
 # Part 08 — Geliştirici Kılavuzu ve Referans Uygulama
 
-Bu bölüm 100. bölümden itibaren başlayacak yeni geliştirici kılavuzunu kapsar.
+Bu bölüm 100. bölümden itibaren başlayan uygulamalı geliştirici kılavuzunu kapsar.
 
 Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede kullanılabilecek sürdürülebilir bir .NET entegrasyon uygulamasının nasıl tasarlanacağını adım adım göstermektir.
 
+## Mevcut Bölümler
+
+- [100 — Referans .NET Çözüm Mimarisi](100_Referans_DotNet_Cozum_Mimarisi.md)
+
 ## Planlanan Konular
 
-- çözüm ve proje klasör yapısı
 - Configuration modeli
 - Company / Period context
 - Logo session factory
@@ -35,8 +38,6 @@ Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede ku
 - örnek üretim entegrasyon servisi
 
 ## Referans Teknoloji Seti
-
-Başlangıç referansı:
 
 ```text
 .NET Framework 4.8
@@ -76,4 +77,4 @@ Configuration
 Monitoring
 ```
 
-> Bu bölüm kitabın teorik bilgilerini çalışan bir uygulama mimarisine dönüştüren uygulamalı kısım olacaktır.
+> Bu bölüm kitabın teorik bilgilerini çalışan bir uygulama mimarisine dönüştüren uygulamalı kısımdır.
