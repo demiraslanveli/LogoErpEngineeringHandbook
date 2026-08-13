@@ -49,12 +49,16 @@ Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede ku
 - [140 — IData Bridge ve Master Data Mapping Standardı](140_IData_Bridge_ve_Master_Data_Mapping_Standarti.md)
 - [141 — Belge IData Header / Line Mapping Standardı](141_Belge_IData_Header_Line_Mapping_Standardi.md)
 - [142 — ProductionApplication Bridge ve SDK İzolasyonu](142_ProductionApplication_Bridge_ve_SDK_Izolasyonu.md)
+- [143 — Logo COM Yaşam Döngüsü ve Kaynak Bırakma Standardı](143_Logo_COM_Yasam_Dongusu_ve_Kaynak_Birakma_Standarti.md)
+- [144 — Logo SDK Binding Manifest ve Uyumluluk Kontrolü](144_Logo_SDK_Binding_Manifest_ve_Uyumluluk_Kontrolu.md)
+- [145 — Logo Hata Normalizasyonu ve Ortak IData Writer](145_Logo_Hata_Normalizasyonu_ve_Ortak_IData_Writer.md)
 
 ## Sıradaki Konular
 
 - verified `ILogoSdkBridge` implementasyonu
 - verified `ILogoDataObjectFactory` COM wrapper
-- verified order/dispatch/invoice Logo Objects field mapping
+- gerçek SDK binding manifest dosyası
+- verified order/dispatch/invoice field mapping
 - verified ProductionApplication bridge implementasyonu
 - structured logging sink
 - Logo session health persistence
