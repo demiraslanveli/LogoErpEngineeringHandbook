@@ -47,13 +47,15 @@ Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede ku
 - [138 — IntegrationTestFixture Gerçek Kod](138_IntegrationTestFixture_Gercek_Kod.md)
 - [139 — Logo SDK Binding ve Session Doğrulama Standardı](139_Logo_SDK_Binding_ve_Session_Dogrulama_Standarti.md)
 - [140 — IData Bridge ve Master Data Mapping Standardı](140_IData_Bridge_ve_Master_Data_Mapping_Standarti.md)
+- [141 — Belge IData Header / Line Mapping Standardı](141_Belge_IData_Header_Line_Mapping_Standardi.md)
+- [142 — ProductionApplication Bridge ve SDK İzolasyonu](142_ProductionApplication_Bridge_ve_SDK_Izolasyonu.md)
 
 ## Sıradaki Konular
 
 - verified `ILogoSdkBridge` implementasyonu
 - verified `ILogoDataObjectFactory` COM wrapper
-- order/dispatch/invoice line mapping profile'ları
-- ProductionApplication bridge implementasyonu
+- verified order/dispatch/invoice Logo Objects field mapping
+- verified ProductionApplication bridge implementasyonu
 - structured logging sink
 - Logo session health persistence
 - deployment rollback scripti
