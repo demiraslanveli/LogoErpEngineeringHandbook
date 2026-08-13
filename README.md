@@ -2,22 +2,11 @@
 
 **Logo ERP, Logo Objects, ProductionApplication, SQL Server ve Kurumsal Entegrasyonlar için Teknik Referans**
 
-Bu repository yalnızca Logo Objects kullanımını anlatan bir kitap değildir. İçerik; Logo ERP veri modeli, SDK geliştirme, detaylı üretim, seri/lot, kalite, maliyetlendirme, SQL Server, finans, entegrasyon, operasyon ve güvenlik başlıklarını kapsayan yaşayan bir mühendislik el kitabıdır.
+Bu repository yalnızca Logo Objects kullanımını anlatan bir kitap değildir. İçerik; Logo ERP veri modeli, SDK geliştirme, detaylı üretim, seri/lot, kalite, maliyetlendirme, SQL Server, finans, entegrasyon, operasyon, güvenlik ve production-grade referans uygulama mimarisini kapsayan yaşayan bir mühendislik el kitabıdır.
 
 ## Kitap Mimarisi
 
 - [Kitap Mimarisi](00_Kitap_Mimarisi.md)
-
-## Çalışan Referans Uygulama
-
-Handbook içindeki 100+ uygulamalı bölümün gerçek `net48` proje iskeleti repository içinde oluşturulmaya başlanmıştır.
-
-- [Reference Application](REFERENCE_APPLICATION.md)
-- `LogoErp.Reference.sln`
-- `src/`
-- `tests/`
-- `database/migrations/`
-- `deploy/`
 
 ## Ana Bölümler
 
@@ -30,49 +19,40 @@ Handbook içindeki 100+ uygulamalı bölümün gerçek `net48` proje iskeleti re
 7. [Operasyon, Güvenlik, Backup ve DR](PART_07_Operasyon_Guvenlik_Backup_ve_DR.md)
 8. [Geliştirici Kılavuzu ve Referans Uygulama](PART_08_Gelistirici_Kilavuzu_ve_Referans_Uygulama.md)
 
-## Güncel Uygulamalı Seri
+## Referans Uygulama
 
-100. bölümden itibaren kitap, teorik ve saha bilgisini çalışan referans uygulama mimarisine dönüştürmektedir.
+100–160 arasındaki uygulamalı mimari seri tamamlanmıştır.
+
+- [Reference Application](REFERENCE_APPLICATION.md)
+- `LogoErp.Reference.sln`
+- `src/`
+- `tests/`
+- `database/migrations/`
+- `deploy/`
+
+Serinin başlangıcı:
 
 - [100 — Referans .NET Çözüm Mimarisi](100_Referans_DotNet_Cozum_Mimarisi.md)
-- [101 — Configuration ve Company / Period Context](101_Configuration_ve_CompanyPeriod_Context.md)
-- [102 — Logo Session Factory ve IApplication Wrapper](102_Logo_Session_Factory_ve_IApplication_Wrapper.md)
-- [103 — IData / IQuery Helper ve Adapter Katmanı](103_IData_IQuery_Helper_ve_Adapter_Katmani.md)
-- [104 — LogoOperationResult ve Generic Hata Parser](104_LogoOperationResult_ve_Generic_Hata_Parser.md)
-- [105 — Structured Logging, CorrelationId ve Audit Context](105_Structured_Logging_CorrelationId_ve_Audit_Context.md)
-- [106 — Transaction Sınırı, Idempotency ve Retry Politikası](106_Transaction_Siniri_Idempotency_ve_Retry_Politikasi.md)
-- [107 — Application Service, Repository ve Mapper Ayrımı](107_Application_Service_Repository_ve_Mapper_Ayrimi.md)
-- [108 — Validation Pipeline ve Domain Kuralları](108_Validation_Pipeline_ve_Domain_Kurallari.md)
-- [109 — Configuration Encryption ve Secret Yönetimi](109_Configuration_Encryption_ve_Secret_Yonetimi.md)
-- [110 — Batch Processor ve Toplu İşlem Mimarisi](110_Batch_Processor_ve_Toplu_Islem_Mimarisi.md)
-- [111 — Background Worker ve Windows Service Çalışma Modeli](111_Background_Worker_ve_Windows_Service_Calisma_Modeli.md)
-- [112 — Health Check ve Dependent Service Kontrolleri](112_Health_Check_ve_Dependent_Service_Kontrolleri.md)
-- [113 — Fake Adapter, Test Doubles ve Mock Stratejisi](113_Fake_Adapter_Test_Doubles_ve_Mock_Stratejisi.md)
-- [114 — Integration Test Standardı ve Test Ortam Stratejisi](114_Integration_Test_Standarti_ve_Test_Ortam_Stratejisi.md)
-- [115 — Malzeme Kartı Servisi Referans Implementasyonu](115_Malzeme_Karti_Servisi_Referans_Implementasyonu.md)
-- [116 — Cari Kart Servisi Referans Implementasyonu](116_Cari_Kart_Servisi_Referans_Implementasyonu.md)
-- [117 — Sipariş Servisi Referans Implementasyonu](117_Siparis_Servisi_Referans_Implementasyonu.md)
-- [118 — İrsaliye / Fatura Servisi Referans Implementasyonu](118_Irsaliye_Fatura_Servisi_Referans_Implementasyonu.md)
-- [119 — Üretim Entegrasyon Servisi Referans Implementasyonu](119_Uretim_Entegrasyon_Servisi_Referans_Implementasyonu.md)
-- [120 — Ortak Mapper ve Validator Kütüphanesi](120_Ortak_Mapper_ve_Validator_Kutuphanesi.md)
-- [121 — Reconciliation Repository ve Karşılaştırma Modeli](121_Reconciliation_Repository_ve_Karsilastirma_Modeli.md)
-- [122 — Idempotency Store SQL Şeması](122_Idempotency_Store_SQL_Semasi.md)
-- [123 — Windows Service Host ve Runtime Yönetimi](123_Windows_Service_Host_ve_Runtime_Yonetimi.md)
-- [124 — Composition Root ve Dependency Wiring](124_Composition_Root_ve_Dependency_Wiring.md)
-- [125 — Uçtan Uca Örnek Entegrasyon Akışı](125_Uctan_Uca_Ornek_Entegrasyon_Akisi.md)
-- [126 — Referans Solution ve Klasör İskeleti](126_Referans_Solution_ve_Klasor_Iskeleti.md)
-- [127 — Örnek Interface ve Class Sözleşmeleri](127_Ornek_Interface_ve_Class_Sozlesmeleri.md)
-- [128 — SQL Bootstrap, Migration ve Schema Versioning](128_SQL_Bootstrap_Migration_ve_Schema_Versioning.md)
-- [129 — Deployment, Rollback ve Release Prosedürü](129_Deployment_Rollback_ve_Release_Proseduru.md)
-- [130 — Production Readiness Checklist](130_Production_Readiness_Checklist.md)
-- [131 — Release Versioning ve Uyumluluk Modeli](131_Release_Versioning_ve_Uyumluluk_Modeli.md)
-- [132 — Program.cs ve Service Entry Point](132_ProgramCS_ve_Service_EntryPoint.md)
-- [133 — Windows Service Class ve Lifecycle Kodu](133_Windows_Service_Class_ve_Lifecycle_Kodu.md)
-- [134 — Composition Root Gerçek Kod İskeleti](134_CompositionRoot_Gercek_Kod_Iskeleti.md)
-- [135 — Migration Runner Gerçek Kod İskeleti](135_MigrationRunner_Gercek_Kod_Iskeleti.md)
-- [136 — SQL Idempotency Repository Gerçek Kod](136_SQL_IdempotencyRepository_Gercek_Kod.md)
-- [137 — HealthCheckRunner Gerçek Kod](137_HealthCheckRunner_Gercek_Kod.md)
-- [138 — IntegrationTestFixture Gerçek Kod](138_IntegrationTestFixture_Gercek_Kod.md)
+
+Serinin kapanış bölümleri:
+
+- [146 — Verified ILogoSdkBridge Implementasyon Planı](146_Verified_ILogoSdkBridge_Implementasyon_Plani.md)
+- [147 — Verified ILogoDataObjectFactory COM Wrapper](147_Verified_ILogoDataObjectFactory_COM_Wrapper.md)
+- [148 — Malzeme Kartı Verified IData Binding](148_Malzeme_Karti_Verified_IData_Binding.md)
+- [149 — Cari Kart Verified IData Binding](149_Cari_Kart_Verified_IData_Binding.md)
+- [150 — Sipariş Verified IData Binding](150_Siparis_Verified_IData_Binding.md)
+- [151 — İrsaliye / Fatura Verified IData Binding](151_Irsaliye_Fatura_Verified_IData_Binding.md)
+- [152 — ProductionApplication Verified Binding](152_ProductionApplication_Verified_Binding.md)
+- [153 — Structured Logging ve Operasyonel Telemetri](153_Structured_Logging_ve_Operasyonel_Telemetri.md)
+- [154 — Health Persistence ve Operational Status Modeli](154_Health_Persistence_ve_Operational_Status_Modeli.md)
+- [155 — Windows Service Host Production Modeli](155_Windows_Service_Host_Production_Modeli.md)
+- [156 — Deployment, Upgrade ve Rollback Runbook](156_Deployment_Upgrade_ve_Rollback_Runbook.md)
+- [157 — Release Artifact ve Paketleme Standardı](157_Release_Artifact_ve_Paketleme_Standardi.md)
+- [158 — End-to-End Integration Test Senaryoları](158_EndToEnd_Integration_Test_Senaryolari.md)
+- [159 — Final Production Acceptance Checklist](159_Final_Production_Acceptance_Checklist.md)
+- [160 — Referans Uygulama Final Mimari Özeti](160_Referans_Uygulama_Final_Mimari_Ozeti.md)
+
+Tüm 100–160 listesi için [Part 08 indeksine](PART_08_Gelistirici_Kilavuzu_ve_Referans_Uygulama.md) bakılabilir.
 
 ## Temel Prensipler
 
@@ -82,6 +62,9 @@ Handbook içindeki 100+ uygulamalı bölümün gerçek `net48` proje iskeleti re
 - Veri bütünlüğü, maliyetlendirme, seri/lot izlenebilirliği ve muhasebe ilişkileri birlikte ele alınmalıdır.
 - Entegrasyonlarda idempotency, retry, reconciliation, correlation id ve loglama standart kabul edilir.
 - Kesin doğrulanmamış Logo enum, field veya tablo davranışı sürüm bağımlılığı belirtilmeden kesin bilgi olarak yazılmaz.
+- SDK uyumluluğu binding manifest ile doğrulanır.
+- COM yaşam döngüsü explicit ve deterministic yönetilir.
+- Deployment, rollback, health ve end-to-end test production mimarisinin parçasıdır.
 
 ## Bilgi Güven Seviyeleri
 
@@ -91,8 +74,15 @@ Handbook içindeki 100+ uygulamalı bölümün gerçek `net48` proje iskeleti re
 - **Sürüm Bağımlı:** Logo / Objects sürümüne göre değişebilecek bilgi.
 - **Kontrol Edilmeli:** Henüz kesin doğrulanmamış bilgi.
 
-## Repository Yaklaşımı
+## Bundan Sonraki Gelişim
 
-Mevcut 1–99 bölüm dosyaları bağlantı geçmişini korumak için kök dizinde bırakılmıştır. İçerik `PART_01`–`PART_08` indeksleri üzerinden alan bazında okunur.
+Temel mimari seri tamamlandığı için yeni bölüm üretmek yerine mevcut içerik yaşayan referans olarak güncellenecektir:
 
-> Amaç Logo ERP üzerinde geliştirme, entegrasyon ve operasyon yapan ekipler için tekrar kullanılabilir bir mühendislik referansı oluşturmaktır.
+- doğrulanmış SDK kodları,
+- gerçek saha vakaları,
+- çalışan SQL/C# örnekleri,
+- Logo sürüm uyumluluk kayıtları,
+- performans analizleri,
+- production test sonuçları.
+
+> Amaç Logo ERP üzerinde geliştirme, entegrasyon ve operasyon yapan ekipler için tekrar kullanılabilir ve doğrulanabilir bir mühendislik referansı oluşturmaktır.
