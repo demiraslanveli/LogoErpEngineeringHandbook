@@ -52,18 +52,33 @@ Amaç yalnızca Logo Objects metotlarını listelemek değil; gerçek projede ku
 - [143 — Logo COM Yaşam Döngüsü ve Kaynak Bırakma Standardı](143_Logo_COM_Yasam_Dongusu_ve_Kaynak_Birakma_Standarti.md)
 - [144 — Logo SDK Binding Manifest ve Uyumluluk Kontrolü](144_Logo_SDK_Binding_Manifest_ve_Uyumluluk_Kontrolu.md)
 - [145 — Logo Hata Normalizasyonu ve Ortak IData Writer](145_Logo_Hata_Normalizasyonu_ve_Ortak_IData_Writer.md)
+- [146 — Verified ILogoSdkBridge Implementasyon Planı](146_Verified_ILogoSdkBridge_Implementasyon_Plani.md)
+- [147 — Verified ILogoDataObjectFactory COM Wrapper](147_Verified_ILogoDataObjectFactory_COM_Wrapper.md)
+- [148 — Malzeme Kartı Verified IData Binding](148_Malzeme_Karti_Verified_IData_Binding.md)
+- [149 — Cari Kart Verified IData Binding](149_Cari_Kart_Verified_IData_Binding.md)
+- [150 — Sipariş Verified IData Binding](150_Siparis_Verified_IData_Binding.md)
+- [151 — İrsaliye / Fatura Verified IData Binding](151_Irsaliye_Fatura_Verified_IData_Binding.md)
+- [152 — ProductionApplication Verified Binding](152_ProductionApplication_Verified_Binding.md)
+- [153 — Structured Logging ve Operasyonel Telemetri](153_Structured_Logging_ve_Operasyonel_Telemetri.md)
+- [154 — Health Persistence ve Operational Status Modeli](154_Health_Persistence_ve_Operational_Status_Modeli.md)
+- [155 — Windows Service Host Production Modeli](155_Windows_Service_Host_Production_Modeli.md)
+- [156 — Deployment, Upgrade ve Rollback Runbook](156_Deployment_Upgrade_ve_Rollback_Runbook.md)
+- [157 — Release Artifact ve Paketleme Standardı](157_Release_Artifact_ve_Paketleme_Standardi.md)
+- [158 — End-to-End Integration Test Senaryoları](158_EndToEnd_Integration_Test_Senaryolari.md)
+- [159 — Final Production Acceptance Checklist](159_Final_Production_Acceptance_Checklist.md)
+- [160 — Referans Uygulama Final Mimari Özeti](160_Referans_Uygulama_Final_Mimari_Ozeti.md)
 
-## Sıradaki Konular
+## Uygulamalı Serinin Durumu
 
-- verified `ILogoSdkBridge` implementasyonu
-- verified `ILogoDataObjectFactory` COM wrapper
-- gerçek SDK binding manifest dosyası
-- verified order/dispatch/invoice field mapping
-- verified ProductionApplication bridge implementasyonu
-- structured logging sink
-- Logo session health persistence
-- deployment rollback scripti
-- Windows Service host dönüşümü
+100–160 arasındaki temel uygulamalı mimari seri tamamlanmıştır.
+
+Bundan sonra ana hedef yeni bölüm numarası üretmek değil;
+
+- doğrulanmış Logo SDK örneklerini ilgili bölümlere işlemek,
+- gerçek saha vakalarını doğru bölümlere eklemek,
+- çalışan C# / SQL örneklerini genişletmek,
+- Logo sürüm değişikliklerini binding manifest ile belgelemek,
+- production test ve performans sonuçlarını güncellemektir.
 
 ## Referans Teknoloji Seti
 
@@ -109,4 +124,4 @@ Deployment
 Versioning
 ```
 
-> Bu bölüm kitabın teorik bilgilerini çalışan bir uygulama mimarisine dönüştüren uygulamalı kısımdır.
+> Bu bölüm kitabın teorik bilgilerini production-grade referans uygulama mimarisine dönüştüren uygulamalı kısımdır.
