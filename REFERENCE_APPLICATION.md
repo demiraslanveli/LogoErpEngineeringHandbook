@@ -29,9 +29,12 @@ src/
 │   └── Sql/
 │
 ├── LogoErp.Reference.LogoAdapter/
+│   ├── Binding/
 │   ├── Customers/
 │   ├── Data/
 │   ├── Documents/
+│   ├── Errors/
+│   ├── Interop/
 │   ├── Materials/
 │   ├── Orders/
 │   ├── Production/
@@ -95,7 +98,7 @@ Validation ve orchestration burada yapılır.
 
 Logo Objects / UnityApplication / ProductionApplication bağımlılığı yalnızca bu projede bulunmalıdır.
 
-Session katmanı:
+#### Session Boundary
 
 ```text
 LogoSessionAdapter
@@ -107,12 +110,28 @@ Verified Logo SDK Binding
 
 `LogoSessionAdapter` yalnızca bridge gerçekten login olduğunda açık kabul edilir. Doğrulanmış SDK binding yoksa `UnconfiguredLogoSdkBridge` kullanılır ve sistem fail-fast davranır.
 
-IData katmanı:
+#### Binding Manifest
+
+SDK sürüm bağımlılığı artık açık bir manifest ile temsil edilir:
+
+```text
+LogoSdkBindingManifest
+LogoSdkBindingKeys
+LogoSdkCompatibilityChecker
+```
+
+Manifest; UnityApplication, login/logout, NewDataObject, `DataObjectType`, IData post/error ve ProductionApplication binding bilgilerini hedef sürüm doğrulandıktan sonra tutar.
+
+Eksik binding durumunda adapter tahmine dayalı çağrı yapmaz; `SDK_BINDING_INCOMPLETE` ile durur.
+
+#### IData Boundary
 
 ```text
 Gateway
    ↓
 Mapping Profile
+   ↓
+LogoDataObjectWriter
    ↓
 ILogoDataObjectFactory
    ↓
@@ -127,6 +146,8 @@ Mevcut Data ve mapping parçaları:
 ILogoDataObject
 ILogoDataObjectLine
 ILogoDataObjectFactory
+LogoDataObjectWriter
+LogoLineWriter
 MaterialDataMappingProfile
 CustomerDataMappingProfile
 OrderDataMappingProfile
@@ -148,7 +169,29 @@ Append Lines
 Set Line Fields
     ↓
 Post
+    ↓
+Normalize Error / Result
 ```
+
+#### Error Normalization
+
+Logo hata bilgisi adapter sınırında standartlaştırılır:
+
+```text
+LogoAdapterErrorNormalizer
+```
+
+SDK hata kodu/açıklaması `OperationResult` formatına çevrilir; exception durumları `LOGO_ADAPTER_EXCEPTION` olarak normalize edilir.
+
+#### COM Lifecycle
+
+Uzun yaşayan servislerde COM kaynakları explicit bırakılmalıdır.
+
+```text
+ComReleaseHelper
+```
+
+referans helper'ı `Marshal.IsComObject` kontrolü ile COM nesnelerini deterministik olarak bırakmak için eklenmiştir. `GC.Collect()` kaynak yönetimi stratejisi olarak kullanılmaz.
 
 ### ProductionApplication Boundary
 
@@ -273,9 +316,9 @@ Core
 
 Application katmanının `LogoAdapter` projesine doğrudan referansı yoktur. Böylece Logo SDK'sı olmadan application logic fake gateway'lerle test edilebilir.
 
-## Fake Adapter Stratejisi
+## Fake Adapter ve Test Stratejisi
 
-Test projesinde mevcut fake adapter'lar:
+Mevcut fake adapter'lar:
 
 ```text
 FakeLogoMaterialGateway
@@ -285,7 +328,7 @@ FakeDispatchInvoiceGateway
 FakeProductionGateway
 ```
 
-Fake adapter'lar application-service validation/orchestration testlerini gerçek Logo kurulumu veya COM registration gerektirmeden çalıştırmak içindir.
+Ayrıca SDK binding manifestinin eksik/doğru binding davranışı `LogoSdkCompatibilityCheckerTests` ile test edilmektedir.
 
 ## Logo SDK Entegrasyon Kuralı
 
@@ -329,6 +372,7 @@ adıyla devam etmektedir.
 
 - verified `ILogoSdkBridge` implementasyonu
 - verified `ILogoDataObjectFactory` COM wrapper
+- gerçek SDK binding manifest dosyası
 - malzeme zorunlu birim seti mapping'i
 - cari kart ek zorunlu alan mapping'i
 - verified order/dispatch/invoice Logo Objects field mapping
@@ -344,5 +388,8 @@ adıyla devam etmektedir.
 - [140 — IData Bridge ve Master Data Mapping Standardı](140_IData_Bridge_ve_Master_Data_Mapping_Standarti.md)
 - [141 — Belge IData Header / Line Mapping Standardı](141_Belge_IData_Header_Line_Mapping_Standardi.md)
 - [142 — ProductionApplication Bridge ve SDK İzolasyonu](142_ProductionApplication_Bridge_ve_SDK_Izolasyonu.md)
+- [143 — Logo COM Yaşam Döngüsü ve Kaynak Bırakma Standardı](143_Logo_COM_Yasam_Dongusu_ve_Kaynak_Birakma_Standarti.md)
+- [144 — Logo SDK Binding Manifest ve Uyumluluk Kontrolü](144_Logo_SDK_Binding_Manifest_ve_Uyumluluk_Kontrolu.md)
+- [145 — Logo Hata Normalizasyonu ve Ortak IData Writer](145_Logo_Hata_Normalizasyonu_ve_Ortak_IData_Writer.md)
 
 > Referans uygulama, handbook içindeki mimari prensiplerin gerçek kod karşılığı olarak geliştirilmektedir.
