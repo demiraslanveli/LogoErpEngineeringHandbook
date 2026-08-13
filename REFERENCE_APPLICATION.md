@@ -95,7 +95,7 @@ Validation ve orchestration burada yapılır.
 
 Logo Objects / UnityApplication / ProductionApplication bağımlılığı yalnızca bu projede bulunmalıdır.
 
-Session katmanı artık iki seviyelidir:
+Session katmanı:
 
 ```text
 LogoSessionAdapter
@@ -105,21 +105,23 @@ ILogoSdkBridge
 Verified Logo SDK Binding
 ```
 
-`LogoSessionAdapter` yalnızca bridge gerçekten login olduğunda açık kabul edilir. Doğrulanmış SDK binding yoksa `UnconfiguredLogoSdkBridge` kullanılır ve sistem bilinçli olarak fail-fast davranır.
+`LogoSessionAdapter` yalnızca bridge gerçekten login olduğunda açık kabul edilir. Doğrulanmış SDK binding yoksa `UnconfiguredLogoSdkBridge` kullanılır ve sistem fail-fast davranır.
 
-IData tarafı da sürümden bağımsız bridge'e ayrılmıştır:
+IData katmanı:
 
 ```text
-LogoMaterialGateway / LogoCustomerGateway
-        ↓
+Gateway
+   ↓
+Mapping Profile
+   ↓
 ILogoDataObjectFactory
-        ↓
+   ↓
 ILogoDataObject
-        ↓
+   ↓
 Verified IData COM Wrapper
 ```
 
-Mevcut Data katmanı:
+Mevcut Data ve mapping parçaları:
 
 ```text
 ILogoDataObject
@@ -127,12 +129,53 @@ ILogoDataObjectLine
 ILogoDataObjectFactory
 MaterialDataMappingProfile
 CustomerDataMappingProfile
+OrderDataMappingProfile
+DispatchInvoiceDataMappingProfile
 UnconfiguredLogoDataObjectFactory
 ```
 
-Malzeme ve cari gateway'leri artık `SetField → Post → Logo ErrorCode/ErrorDescription` akışını bu bridge üzerinden uygular. Kesin `DataObjectType` ve field isimleri hedef Logo sürümünde doğrulanmadan mapping profile'a production değeri verilmez.
+Malzeme, cari, sipariş, irsaliye ve fatura gateway'leri generic IData bridge üzerinden çalışacak şekilde düzenlenmiştir. Header ve line field adları ile `DataObjectType` anahtarları hedef Logo Objects sürümünde doğrulanmadan production profile'a verilmez.
 
-Gerçek Logo SDK referansı hedef Logo kurulumundan doğrulanarak bu projeye eklenmelidir. COM type, `DataObjectType`, field adı, login davranışı veya `ProductionApplication` metodu doğrulanmadan framework içinde sabitlenmez.
+Belge akışı:
+
+```text
+Create IData
+    ↓
+Set Header Fields
+    ↓
+Append Lines
+    ↓
+Set Line Fields
+    ↓
+Post
+```
+
+### ProductionApplication Boundary
+
+Üretim entegrasyonu ayrı bridge ile izole edilmiştir:
+
+```text
+ProductionService
+      ↓
+IProductionGateway
+      ↓
+LogoProductionGateway
+      ↓
+IProductionApplicationBridge
+      ↓
+ProductionApplication
+```
+
+Mevcut parçalar:
+
+```text
+IProductionApplicationBridge
+ProductionApplicationCommand
+UnconfiguredProductionApplicationBridge
+LogoProductionGateway
+```
+
+Doğrulanmış ProductionApplication binding yoksa sistem `PRODUCTION_SDK_NOT_CONFIGURED` sonucu ile fail-fast davranır. `LogoProductionGateway`, bridge yaşam döngüsünü `Open → operation → Close` biçiminde yönetir ve `Close()` çağrısını `finally` içinde yapar.
 
 ### Infrastructure
 
@@ -288,7 +331,7 @@ adıyla devam etmektedir.
 - verified `ILogoDataObjectFactory` COM wrapper
 - malzeme zorunlu birim seti mapping'i
 - cari kart ek zorunlu alan mapping'i
-- order/dispatch/invoice line mapping profile'ları
+- verified order/dispatch/invoice Logo Objects field mapping
 - structured logging sink
 - Logo session health persistence
 - verified ProductionApplication implementation
@@ -299,5 +342,7 @@ adıyla devam etmektedir.
 
 - [139 — Logo SDK Binding ve Session Doğrulama Standardı](139_Logo_SDK_Binding_ve_Session_Dogrulama_Standarti.md)
 - [140 — IData Bridge ve Master Data Mapping Standardı](140_IData_Bridge_ve_Master_Data_Mapping_Standarti.md)
+- [141 — Belge IData Header / Line Mapping Standardı](141_Belge_IData_Header_Line_Mapping_Standardi.md)
+- [142 — ProductionApplication Bridge ve SDK İzolasyonu](142_ProductionApplication_Bridge_ve_SDK_Izolasyonu.md)
 
 > Referans uygulama, handbook içindeki mimari prensiplerin gerçek kod karşılığı olarak geliştirilmektedir.
